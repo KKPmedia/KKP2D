@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - main_bullett
+  - MeeleTrigger
+  - Ladder
+  - snow_ball
+  - TimerStart
+  - TimerStop
+  - attack_area
+  - hurt_area
+  - enemy
+  - snow_loader
+  - jungle_loader
+  - wasteland_loader
+  - desert_loader
+  - slash_area
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Ground
+  - Enemy
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3908635377
+    locked: 0
+  - name: Ground
+    uniqueID: 242911901
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3591285651
+    locked: 0
