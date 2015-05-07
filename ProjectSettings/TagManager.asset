@@ -18,6 +18,7 @@ TagManager:
   - wasteland_loader
   - desert_loader
   - slash_area
+  - penguin
   layers:
   - Default
   - TransparentFX

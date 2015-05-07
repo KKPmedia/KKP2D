@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.LeftControl)) {
 			notCrouch();
 		}
-		if (Input.GetMouseButtonDown (0) && Time.time > nextFire && anim.GetBool ("climbimg") == false) {
+		if (Input.GetMouseButtonDown (0) && Time.time > nextFire) {
 			shoot();
 		}
 		if (Input.GetKeyDown (KeyCode.E) && Time.time > nextSlash) {

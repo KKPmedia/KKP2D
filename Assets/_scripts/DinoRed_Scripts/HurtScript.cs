@@ -20,7 +20,7 @@ public class HurtScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("enemy")) {
 			//damage = dino_red.GetComponent<AttackScript>().dino_red_bite_damage;
-			Invoke ("main_char_hurt", 0.5f);
+			Invoke ("main_char_hurt", 0.2f);
 		}
 	}
 

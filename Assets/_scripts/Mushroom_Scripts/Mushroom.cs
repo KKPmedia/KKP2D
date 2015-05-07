@@ -17,8 +17,11 @@ public class Mushroom : MonoBehaviour {
 	void Start () {
 		anim = this.GetComponent<Animator> ();
 		pc = player.GetComponent<PlayerController> ();
-		walkScript = this.GetComponent<Walk> ();
-		speed = walkScript.speed.x;
+
+		if (this.GetComponent<Walk> () != null) {
+			walkScript = this.GetComponent<Walk> ();
+			speed = walkScript.speed.x;
+		}
 	}
 	
 	// Update is called once per frame
@@ -30,7 +33,16 @@ public class Mushroom : MonoBehaviour {
 		if (col.CompareTag ("Player")) {
 			anim.SetBool("standOn", true);
 			pc.jumpForce = pc.jumpForce * bounceForce;
-			walkScript.speed.x = 0;
+			if (this.GetComponent<Walk> () != null)
+				walkScript.speed.x = 0;
+		}
+	}
+
+	void OnTriggerStay2D (Collider2D col) {
+		if (col.CompareTag ("Player")) {
+			anim.SetBool("standOn", true);
+			if (this.GetComponent<Walk> () != null)
+				walkScript.speed.x = 0;
 		}
 	}
 
@@ -38,8 +50,10 @@ public class Mushroom : MonoBehaviour {
 		if (col.CompareTag ("Player")) {
 			anim.SetBool ("standOn", false);
 			pc.jumpForce = pc.jumpForce / bounceForce;
+			if (this.GetComponent<Walk> () != null) {
 			walkScript.enabled = true;
 			walkScript.speed.x = speed;
+			}
 		}
 	}
 }

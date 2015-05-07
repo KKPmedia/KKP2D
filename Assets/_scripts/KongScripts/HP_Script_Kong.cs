@@ -18,10 +18,12 @@ public class HP_Script_Kong : MonoBehaviour {
 		private int x = 0;
 		private float next_slash = 0;
 		public float slash_delay = 1.5f;
+		private Animator player_anim;
 		
 		// Use this for initialization
 		void Start () {
 			enemy_anim = this.GetComponent<Animator> ();
+			player_anim = player.GetComponent<Animator> ();
 		}
 		
 		// Update is called once per frame
@@ -48,7 +50,7 @@ public class HP_Script_Kong : MonoBehaviour {
 					i++;
 				}
 			}
-			if (col.CompareTag ("slash_area") && player.GetComponent<Animator>().GetBool("slash") && Time.time > next_slash) {
+			if (col.CompareTag ("slash_area") && player_anim.GetBool("slash") && Time.time > next_slash) {
 				next_slash = Time.time + slash_delay;
 				holdOn();
 				enemy_anim.SetBool("hurt", true);

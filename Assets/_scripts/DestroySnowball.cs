@@ -20,6 +20,8 @@ public class DestroySnowball : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		//Destroy (gameObject, 0f);
+		if (col.CompareTag ("Player")) {
+			Destroy (gameObject, 0.1f);
+		}
 	}
 }

@@ -29,9 +29,10 @@ GameObject:
   - 60: {fileID: 6083906}
   - 114: {fileID: 11470964}
   - 114: {fileID: 11400298}
+  - 114: {fileID: 11465786}
   m_Layer: 0
   m_Name: snowman
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,8 +44,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.5661087, y: -2.69395876, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.0299988, y: 3.7099998, z: 0}
+  m_LocalScale: {x: -.75, y: .75, z: .170940176}
   m_Children:
   - {fileID: 478070}
   m_Father: {fileID: 0}
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -1.13999999, z: 0}
+  m_LocalPosition: {x: 3, y: -2.06999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418612}
@@ -70,7 +71,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 90
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -195,6 +196,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c5de3e226a0df428423386be3f02cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11465786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f3dae5ab2b7ac4ba23548a328eb844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
+  main_bullett_damage: 2
+  slash_damage: 5
+  player: {fileID: 0}
+  slash_delay: .5
 --- !u!114 &11470964
 MonoBehaviour:
   m_ObjectHideFlags: 1

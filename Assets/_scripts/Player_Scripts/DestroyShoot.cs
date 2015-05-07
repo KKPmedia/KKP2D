@@ -14,4 +14,9 @@ public class DestroyShoot : MonoBehaviour {
 		if (re.isVisible == false) 
 			Destroy (gameObject, 0f);
 	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.CompareTag ("enemy") || col.CompareTag ("penguin"))
+			Destroy (gameObject, 0.1f);
+	}
 }
