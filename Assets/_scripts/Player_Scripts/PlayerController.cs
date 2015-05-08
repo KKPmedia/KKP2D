@@ -114,7 +114,14 @@ public class PlayerController : MonoBehaviour {
 		
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
-		
+
+		Vector3 position = transform.localPosition;
+		if (FacingRight)
+			position.x += 1;
+		if (!FacingRight)
+			position.x -= 1;
+
+		transform.localPosition = position;
 		transform.localScale = theScale;
 	}
 

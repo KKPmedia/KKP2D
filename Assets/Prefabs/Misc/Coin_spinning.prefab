@@ -11,6 +11,7 @@ GameObject:
   - 95: {fileID: 9588664}
   - 212: {fileID: 21244656}
   - 58: {fileID: 5868462}
+  - 114: {fileID: 11469446}
   m_Layer: 0
   m_Name: Coin_spinning
   m_TagString: Untagged
@@ -60,6 +61,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11469446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17d3670fddb162459ce471c19833f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21244656
 SpriteRenderer:
   m_ObjectHideFlags: 1
