@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e14fd54473f6640839d02924f547e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 171488, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
   bounceForce: 1.13
 --- !u!212 &21296136
 SpriteRenderer:

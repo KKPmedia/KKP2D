@@ -31,9 +31,10 @@ public class Walk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		position_x = GetComponent<Transform> ().localPosition.x;
+
 		if (this.transform.localScale.x > 0)
 			facingRight = true;
-		else 
+		if (this.transform.localScale.x < 0) 
 			facingRight = false;
 
 		if (position_x < turnToRight && !facingRight) {
@@ -48,6 +49,12 @@ public class Walk : MonoBehaviour {
 	
 	void move () {
 		movement = new Vector2 (speed.x * direction.x, speed.y * direction.y);
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (!col.CompareTag ("Player")) {
+			//flip ();
+		}
 	}
 	
 	void flip () {

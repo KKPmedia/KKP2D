@@ -19,6 +19,7 @@ TagManager:
   - desert_loader
   - slash_area
   - penguin
+  - Meat
   layers:
   - Default
   - TransparentFX

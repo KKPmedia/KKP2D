@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HPScript_Penguin : MonoBehaviour {
+public class HP_Script_Fulture : MonoBehaviour {
 
-	public float hp = 4;
+	public float hp = 5;
 	public float main_bullett_damage = 2;
 	public float slash_damage = 5;
 	public GameObject player;
@@ -26,8 +26,8 @@ public class HPScript_Penguin : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (hp < 1) {
-			holdOn();
 			enemy_anim.SetBool ("dead", true);
+			holdOn();
 			destroy();
 		}
 		
@@ -41,10 +41,17 @@ public class HPScript_Penguin : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("main_bullett")) {
 			if (i == 0) {
+				holdOn();
 				hp -= main_bullett_damage;
-				Invoke ("delay", 0.2f);
+				Invoke ("setHurtFalse", 0.5f);
 				i++;
 			}
+		}
+		if (col.CompareTag ("slash_area") && slash) {
+			next_slash = Time.time + slash_delay;
+			holdOn();
+			hp -= slash_damage;
+			Invoke ("setHurtFalse", 0.5f);
 		}
 	}
 	
@@ -52,24 +59,21 @@ public class HPScript_Penguin : MonoBehaviour {
 		if (col.CompareTag ("slash_area") && slash) {
 			//if (col.CompareTag ("slash_area") && player_anim.GetBool ("slash") && Time.time > next_slash) {
 			next_slash = Time.time + slash_delay;
+			holdOn();
 			hp -= slash_damage;
 			Invoke ("setHurtFalse", 0.5f);
 		}
 	}
 	
 	void holdOn () {
-		if (this.GetComponent<Follow>() != null)
-			this.GetComponent<StartStopMoveScript>().stopFollowScript();
-		if (this.GetComponent<Walk>() != null)
-			this.GetComponent<StartStopMoveScript>().stopWalkScript();
+		if (this.GetComponent<RotateScript>() != null)
+			this.GetComponent<StartStopMoveScript>().stopRotateScript();
+		if (this.GetComponent<MoveScript>() != null)
+			this.GetComponent<StartStopMoveScript>().stopMoveScript();
 	}
-
-	void delay () {
-		i = 0;
-	}
-
+	
 	void destroy() {
-		Destroy (this.gameObject, 1f);
+		Destroy (this.gameObject, 0.5f);
 	}
 }
 

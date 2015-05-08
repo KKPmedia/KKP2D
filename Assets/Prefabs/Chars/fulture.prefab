@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &154078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423856}
+  m_Layer: 0
+  m_Name: meatSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &162300
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,10 +27,15 @@ GameObject:
   - 212: {fileID: 21266014}
   - 50: {fileID: 5005230}
   - 61: {fileID: 6196004}
+  - 58: {fileID: 5876624}
   - 114: {fileID: 11444398}
+  - 114: {fileID: 11453180}
+  - 114: {fileID: 11497750}
+  - 114: {fileID: 11439566}
+  - 114: {fileID: 11459244}
   m_Layer: 0
   m_Name: fulture
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,10 +47,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.0200005, y: -1.30999994, z: 0}
+  m_LocalPosition: {x: 553.599976, y: -63.0600014, z: 0}
   m_LocalScale: {x: -1.21536636, y: 1.21536648, z: 1.21536648}
-  m_Children: []
+  m_Children:
+  - {fileID: 423856}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &423856
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.569999993, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 405070}
   m_RootOrder: 0
 --- !u!50 &5005230
 Rigidbody2D:
@@ -47,6 +80,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5876624
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162300}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .889999986, y: -.109999999}
+  serializedVersion: 2
+  m_Radius: .319999993
 --- !u!61 &6196004
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -57,9 +103,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.0672211647, y: -.113674164}
+  m_Offset: {x: .0750280172, y: -.132648662}
   serializedVersion: 2
-  m_Size: {x: 1.37989271, y: .648557901}
+  m_Size: {x: 1.09531021, y: .307021648}
 --- !u!95 &9500186
 Animator:
   serializedVersion: 3
@@ -77,6 +123,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11439566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4fde89f4c00a248a5bfd245e618792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
+  main_bullett_damage: 2
+  slash_damage: 5
+  player: {fileID: 0}
+  slash_delay: 1.5
 --- !u!114 &11444398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +152,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   direction: {x: -1, y: 0}
+--- !u!114 &11453180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80454707ec3e0114e870633635a7e8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11459244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff5af8f26dfcd8498940c0c75d006c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11497750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7ef679c508e2e4fa72ae30dd7859ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meatSpawn: {fileID: 423856}
+  meat: {fileID: 137912, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
 --- !u!212 &21266014
 SpriteRenderer:
   m_ObjectHideFlags: 1
