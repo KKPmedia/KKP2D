@@ -11,7 +11,6 @@ public class Plattform_Side_Move : MonoBehaviour {
 	public float turnToLeft = 0f;
 	
 	private Vector2 movement;
-	private bool right = true;
 	private float position_x;
 
 	void Start() {

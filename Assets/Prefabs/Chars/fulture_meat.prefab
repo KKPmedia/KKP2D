@@ -46,11 +46,12 @@ GameObject:
   - 50: {fileID: 5085822}
   - 61: {fileID: 6172470}
   - 58: {fileID: 5831968}
-  - 114: {fileID: 11402634}
-  - 114: {fileID: 11451070}
   - 114: {fileID: 11405496}
   - 114: {fileID: 11458572}
   - 114: {fileID: 11420460}
+  - 114: {fileID: 11471496}
+  - 114: {fileID: 11498994}
+  - 114: {fileID: 11488206}
   m_Layer: 0
   m_Name: fulture_meat
   m_TagString: enemy
@@ -65,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 545.359985, y: -61.1699982, z: 0}
-  m_LocalScale: {x: -1.21536636, y: 1.21536648, z: 1.21536648}
+  m_LocalPosition: {x: 557.51001, y: -51.0200005, z: 0}
+  m_LocalScale: {x: -1.21536601, y: 1.21536648, z: 1.21536648}
   m_Children:
   - {fileID: 476756}
   - {fileID: 427366}
@@ -167,19 +168,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11402634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e438cd3b684e1cf46a2a21a84208c063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
-  direction: {x: -1, y: 0}
 --- !u!114 &11405496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,17 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f740feeba461be946b343bdb621edb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11451070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80454707ec3e0114e870633635a7e8a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11458572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +219,47 @@ MonoBehaviour:
   slash_damage: 5
   player: {fileID: 0}
   slash_delay: 1.5
+  meatSpawn: {fileID: 476756}
+  meat: {fileID: 137912, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
+--- !u!114 &11471496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562a5eba7b5cfc94696fcd17a3b04bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  appear_position_x: 525
+--- !u!114 &11488206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291eb40437c476a41863ad11ef62ccfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 2, y: -10}
+  direction: {x: -1, y: -10}
+--- !u!114 &11498994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e438cd3b684e1cf46a2a21a84208c063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 2, y: 10}
+  direction: {x: -1, y: 0}
 --- !u!212 &21269910
 SpriteRenderer:
   m_ObjectHideFlags: 1

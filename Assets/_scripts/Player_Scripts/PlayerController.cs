@@ -8,35 +8,29 @@ public class PlayerController : MonoBehaviour {
 	public float MaxSpeed = 30f;
 	public float run_multiplikator = 1.5f;
 	public float run_timer = 10f;
-	private bool inRun = false;
-
 	static bool FacingRight = true;
-	
+	public Transform GroundCheck;
+	public LayerMask whatIsGrounded;
+	public float jumpForce = 800f;
+	public float climbSpeed = 5f;
+	public GameObject shot;
+	public Transform ShotSpawn;
+	public float fireRate = 1.5f;
+	public float slashRate = 1f;
+
 	Animator anim;
 	Rigidbody2D rb;
-	
 	bool grounded = false;
-
-	public Transform GroundCheck;
 	float groundRadius = 0.2f;
-	public LayerMask whatIsGrounded;
-	
-	public float jumpForce = 700f;
-
+	private bool inRun = false;
 	private bool climb = false;
 	private float gravity;
 	private float linearDrag;
-	public float climbSpeed = 5f;
-
 	private bool crouch = false;
-
-	public GameObject shot;
-	public Transform ShotSpawn;
+	private bool alive = true;
 	private float nextFire = 0.0f;
-	public float fireRate = 1.5f;
-
 	private float nextSlash = 0.0f;
-	public float slashRate = 1f;
+	private Vector3 resetPos;
 	
 	// Use this for initialization
 	void Start () {
@@ -44,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 		rb = this.GetComponent<Rigidbody2D> ();
 		gravity = rb.gravityScale;
 		linearDrag = rb.drag;
+		resetPos = new Vector3 (this.GetComponent<Transform> ().localPosition.x, this.GetComponent<Transform> ().localPosition.y);
 	}
 	
 	void FixedUpdate () {
@@ -51,14 +46,15 @@ public class PlayerController : MonoBehaviour {
 		anim.SetBool ("isGrounded", grounded);
 
 		anim.SetFloat ("vSpeed", GetComponent<Rigidbody2D> ().velocity.y);
-
+		
 		float move = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("Speed", Mathf.Abs (move));
-
+	
 		if (climb) 
 			climbing ();
 		else
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * MaxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+			if (alive)
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * MaxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 		
 		if (move > 0 && !FacingRight)
 			Flip ();
@@ -68,44 +64,48 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (HP == 0) {
-			dead();
-		}
-		if ((grounded) && Input.GetKeyDown(KeyCode.Space)) {
-			jump();
-		}
 
-		if (inRun) {
-			run_timer -= Time.deltaTime;
-			if (run_timer < 0) {
-				run_timer = 0;
+		if (alive) {
+			if ((grounded) && Input.GetKeyDown (KeyCode.Space)) {
+				jump ();
+			}
+
+			if (inRun) {
+				run_timer -= Time.deltaTime;
+				if (run_timer < 0) {
+					run_timer = 0;
+				}
+			}
+			if (!inRun) {
+				run_timer += Time.deltaTime;
+				if (run_timer > 10) {
+					run_timer = 10;
+				}
+			}
+			if (Input.GetKeyDown (KeyCode.LeftShift)) {
+				inRun = true;
+				run ();
+			}
+			if (Input.GetKeyUp (KeyCode.LeftShift)) {
+				inRun = false;
+				notRun ();
+			}
+			if (Input.GetKeyDown (KeyCode.LeftControl)) {
+				m_crouch ();
+			}
+			if (Input.GetKeyUp (KeyCode.LeftControl)) {
+				notCrouch ();
+			}
+			if (Input.GetMouseButtonDown (0) && Time.time > nextFire) {
+				shoot ();
+			}
+			if (Input.GetKeyDown (KeyCode.E) && Time.time > nextSlash) {
+				slash ();
 			}
 		}
-		if (!inRun) {
-			run_timer += Time.deltaTime;
-			if (run_timer > 10) {
-				run_timer = 10;
-			}
-		}
-		if (Input.GetKeyDown (KeyCode.LeftShift)) {
-			inRun = true;
-			run();
-		}
-		if (Input.GetKeyUp (KeyCode.LeftShift)) {
-			inRun = false;
-			notRun ();
-		}
-		if (Input.GetKeyDown (KeyCode.LeftControl)) {
-			m_crouch();
-		}
-		if (Input.GetKeyUp (KeyCode.LeftControl)) {
-			notCrouch();
-		}
-		if (Input.GetMouseButtonDown (0) && Time.time > nextFire) {
-			shoot();
-		}
-		if (Input.GetKeyDown (KeyCode.E) && Time.time > nextSlash) {
-			slash();
+		
+		if (HP < 1) {
+			dead();
 		}
 	}
 	
@@ -206,8 +206,17 @@ public class PlayerController : MonoBehaviour {
 		else 
 			Invoke ("setSlashFalse", 0.6f);
 	}
-	void dead() {
+
+	public void dead() {
+		alive = false;
 		anim.SetBool ("dead", true);
+		Invoke ("reset", 3f);
+	}
+
+	void reset() {
+		this.GetComponent<Transform> ().position = resetPos;
+		anim.SetBool ("dead", false);
+		alive = true;
 	}
 
 	void setSlashFalse() {

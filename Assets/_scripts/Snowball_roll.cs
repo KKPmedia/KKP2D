@@ -43,6 +43,7 @@ public class Snowball_roll : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("ground")) {
+			this.GetComponent<DestroySnowball>().destroy(5);
 			throwing = false;
 			cc.enabled = true;
 		}

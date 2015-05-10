@@ -8,6 +8,8 @@ public class HP_Script_Fulture : MonoBehaviour {
 	public float slash_damage = 5;
 	public GameObject player;
 	public float slash_delay = 1.5f;
+	public Transform meatSpawn;
+	public GameObject meat;
 	
 	private float direction;
 	private Animator enemy_anim;
@@ -73,6 +75,8 @@ public class HP_Script_Fulture : MonoBehaviour {
 	}
 	
 	void destroy() {
+		if (this.GetComponent<Fulture_Attack> () != null)
+			Instantiate (meat, meatSpawn.position, meatSpawn.rotation);
 		Destroy (this.gameObject, 0.5f);
 	}
 }

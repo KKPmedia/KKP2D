@@ -4,18 +4,16 @@ using System.Collections;
 public class Plattform_UpNDown_Move : MonoBehaviour {
 	
 	public Vector2 speed = new Vector2(10, 10);
-	
 	public Vector2 direction = new Vector2(0, 1);
-	
-	public float turnToUp = 5f;
 	public float turnToDown = 11f;
 	
 	private Vector2 movement;
-	private bool right = true;
 	private float position_y;
+	private float turnToUp;
+	private bool moveUp;
 	
 	void Start() {
-		
+		turnToUp = GetComponent<Transform> ().localPosition.y;
 	}
 	// Use this for initialization
 	void FixedUpdate() {
@@ -25,11 +23,16 @@ public class Plattform_UpNDown_Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		position_y = GetComponent<Transform> ().localPosition.y;
+
+		if (direction.y < 0)
+			moveUp = false;
+		if (direction.y > 0)
+			moveUp = true;
 		
-		if (position_y > turnToDown) {
+		if (position_y > turnToDown && moveUp) {
 			flip ();
 		}
-		if (position_y < turnToUp) {
+		if (position_y < turnToUp && !moveUp) {
 			flip ();
 		}
 		
@@ -41,6 +44,6 @@ public class Plattform_UpNDown_Move : MonoBehaviour {
 	}
 	
 	void flip () {
-		direction.y = direction.y * -1;
+		direction.y = direction.y * -1;		
 	}
 }

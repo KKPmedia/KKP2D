@@ -21,6 +21,7 @@ TagManager:
   - penguin
   - Meat
   - ground
+  - fulture
   layers:
   - Default
   - TransparentFX

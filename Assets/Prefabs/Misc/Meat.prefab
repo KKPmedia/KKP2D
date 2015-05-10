@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21233782}
   - 58: {fileID: 5833738}
   - 114: {fileID: 11416362}
+  - 114: {fileID: 11468652}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Meat
@@ -54,6 +55,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f740feeba461be946b343bdb621edb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11468652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca60e66fb8d22a4795fe4d5b5e1121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 171488, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+  Hp: 1
 --- !u!212 &21233782
 SpriteRenderer:
   m_ObjectHideFlags: 1

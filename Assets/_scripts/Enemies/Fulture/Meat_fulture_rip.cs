@@ -16,7 +16,7 @@ public class Meat_fulture_rip : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
-		if (col.CompareTag ("enemy")) {
+		if (col.CompareTag ("fulture")) {
 			destroy ();
 		}
 

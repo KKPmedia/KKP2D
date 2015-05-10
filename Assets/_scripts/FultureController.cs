@@ -31,9 +31,9 @@ public class FultureController : MonoBehaviour {
 		ms.enabled = false;
 		atk.enabled = true;
 
-		if (this.GetComponent<Transform> ().localPosition.y >= currenty) {
-			ms.enabled = true;
-			atk.enabled = false;
-		}
+		//if (this.GetComponent<Transform> ().localPosition.y >= currenty) {
+		//	ms.enabled = true;
+		//	atk.enabled = false;
+		//}
 	}
 }

@@ -26,7 +26,8 @@ public class ShootScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		right = pc.isFacingRight();
+
 		if (right && direction.x < 0)
 			flip ();
 		else if (!right && direction.x > 0)

@@ -15,13 +15,17 @@ public class DestroySnowball : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (re.isVisible == false) {
-			Destroy (this.gameObject, 0f);
+			destroy (0);
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.CompareTag ("Player")) {
-			Destroy (gameObject, 0.1f);
+			destroy(0.1f);
 		}
+	}
+
+	public void destroy (float t) {
+		Destroy (gameObject, t);
 	}
 }
