@@ -5,11 +5,13 @@ public class Snowman : MonoBehaviour {
 
 	public Transform snowballSpawn;
 	public Transform player_pos;
-	public GameObject snowball;
+	public GameObject snowball_throw;
+	public GameObject snowball_straight;
 	Animator anim;
 	private bool canThrow = true;
 	private float nextFire = 0.0f;
 	public float fireRate = 5f;
+	private bool throwing = true;
 
 	// Use this for initialization
 	void Start () {
@@ -23,14 +25,25 @@ public class Snowman : MonoBehaviour {
 		if (Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
 			anim.SetBool ("throw", true);
-			Invoke ("doThrow", 0.5f);
+			if (throwing)
+				Invoke ("doThrow", 0.5f);
+			if (!throwing)
+				Invoke ("doStraight", 0.5f);
 		}
 	}
 
 	void doThrow() {
-		Instantiate (snowball, snowballSpawn.position, snowballSpawn.rotation);
+		Instantiate (snowball_throw, snowballSpawn.position, snowballSpawn.rotation);
 		Invoke ("setThrowFalse", 0.3f);
 		canThrow = false;
+		throwing = false;
+	}
+
+	void doStraight() {
+		Instantiate (snowball_straight, snowballSpawn.position, snowballSpawn.rotation);
+		Invoke ("setThrowFalse", 0.3f);
+		canThrow = false;
+		throwing = true;
 	}
 
 	void setThrowFalse() {

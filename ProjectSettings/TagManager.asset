@@ -20,6 +20,7 @@ TagManager:
   - slash_area
   - penguin
   - Meat
+  - ground
   layers:
   - Default
   - TransparentFX

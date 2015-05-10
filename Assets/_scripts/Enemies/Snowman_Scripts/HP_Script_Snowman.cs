@@ -39,6 +39,11 @@ public class HP_Script_Snowman : MonoBehaviour {
 				i++;
 			}
 		}
+
+		if (col.CompareTag ("slash_area") && player_anim.GetBool ("slash") && Time.time > next_slash) {
+			next_slash = Time.time + slash_delay;
+			hp -= slash_damage;
+		}
 	}
 
 	void OnTriggerStay2D (Collider2D col) {

@@ -26,10 +26,10 @@ public class Plattform_Side_Move : MonoBehaviour {
 	void Update () {
 		position_x = GetComponent<Transform> ().localPosition.x;
 
-		if (position_x > turnToRight) {
+		if (position_x < turnToRight && direction.x < 0) {
 			flip ();
 		}
-		if (position_x < turnToLeft) {
+		if (position_x > turnToLeft && direction.x > 0) {
 			flip ();
 		}
 
