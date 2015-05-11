@@ -7,6 +7,9 @@ public class HUD_UI : MonoBehaviour {
 	public GameObject nrg_bar;
 	public GameObject player;
 	public GameObject hp_bar;
+	public GameObject money_text;
+
+	private string earned_Money;
 	private Image hp_fill_img;
 	private Image nrg_bar_img;
 	private PlayerController pc;
@@ -32,10 +35,16 @@ public class HUD_UI : MonoBehaviour {
 		lp_1_img.enabled = true;
 		lp_2_img.enabled = true;
 		lp_3_img.enabled = true;
+
+		//earned_Money = money_text.GetComponent<Text> ().text;
+		earned_Money = "0";
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		money_text.GetComponent<Text>().text = earned_Money + "$";
+
 		hp_fill_img.fillAmount = pc.getHP () / 10;
 		nrg_bar_img.fillAmount = pc.getNrg () / 10;
 
@@ -54,5 +63,13 @@ public class HUD_UI : MonoBehaviour {
 				pc.setHP(10f);
 			}
 		}
+	}
+
+	public float getEarnedMoney() {
+		return float.Parse(earned_Money);
+	}
+
+	public void setEarnedMoney(float x) {
+		earned_Money = x.ToString();
 	}
 }

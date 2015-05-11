@@ -3,8 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-
-	public float HP = 10;
+	public float startHP = 10f;
 	public float MaxSpeed = 30f;
 	public float run_multiplikator = 1.5f;
 	public float run_timer = 10f;
@@ -31,6 +30,8 @@ public class PlayerController : MonoBehaviour {
 	private float nextFire = 0.0f;
 	private float nextSlash = 0.0f;
 	private Vector3 resetPos;
+	private float HP;
+	private int i = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 		gravity = rb.gravityScale;
 		linearDrag = rb.drag;
 		resetPos = new Vector3 (this.GetComponent<Transform> ().localPosition.x, this.GetComponent<Transform> ().localPosition.y);
+		HP = startHP;
 	}
 	
 	void FixedUpdate () {
@@ -210,10 +212,15 @@ public class PlayerController : MonoBehaviour {
 	public void dead() {
 		alive = false;
 		anim.SetBool ("dead", true);
-		Invoke ("reset", 3f);
+		if (i == 0) {
+			Invoke ("reset", 3f);
+			i++;
+		}
 	}
 
 	void reset() {
+		i = 0;
+		HP = startHP;
 		this.GetComponent<Transform> ().position = resetPos;
 		anim.SetBool ("dead", false);
 		alive = true;
@@ -240,5 +247,9 @@ public class PlayerController : MonoBehaviour {
 
 	public float getNrg () {
 		return run_timer;
+	}
+
+	public bool isAlive() {
+		return alive;
 	}
 }

@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17d3670fddb162459ce471c19833f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud_ui: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
+  coinPoints: 15
 --- !u!212 &21244656
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5094204}
   - 114: {fileID: 11407494}
   - 114: {fileID: 11407342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cloud2@2x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51691e4acf702a439b87e258ba1e780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 150
   end: -80
 --- !u!212 &21280494
 SpriteRenderer:

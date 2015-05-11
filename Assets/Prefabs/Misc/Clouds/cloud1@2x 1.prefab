@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5009772}
   - 114: {fileID: 11422136}
   - 114: {fileID: 11491730}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cloud1@2x 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51691e4acf702a439b87e258ba1e780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 150
   end: -60
 --- !u!114 &11491730
 MonoBehaviour:
