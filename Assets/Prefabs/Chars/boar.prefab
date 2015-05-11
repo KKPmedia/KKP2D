@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6121408}
   - 114: {fileID: 11483212}
   - 114: {fileID: 11497814}
+  - 114: {fileID: 11491598}
   m_Layer: 0
   m_Name: boar
   m_TagString: enemy
@@ -91,6 +92,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   direction: {x: -1, y: 0}
+--- !u!114 &11491598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07d2c1605b3e014397c740fd888e1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497814
 MonoBehaviour:
   m_ObjectHideFlags: 1

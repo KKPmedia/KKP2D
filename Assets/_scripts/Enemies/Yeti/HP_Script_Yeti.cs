@@ -50,7 +50,6 @@ public class HP_Script_Yeti : MonoBehaviour {
 			if (i == 0) {
 				if (angry == false) {
 					holdOn();
-				//enemy_anim.SetBool("hurt", true);
 					Invoke ("setHurtFalse", 0.5f);
 				}
 				currenthp -= main_bullett_damage;
