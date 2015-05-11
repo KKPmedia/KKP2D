@@ -5,7 +5,7 @@ public class Desert_scene_loader: MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.CompareTag ("Player")) {
-			Application.LoadLevel(2);
+			Application.LoadLevel(4);
 		}
 	}
 }
