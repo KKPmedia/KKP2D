@@ -11309,12 +11309,12 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 21.0583363
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -25778,6 +25778,14 @@ Prefab:
       propertyPath: Bounds
       value: 
       objectReference: {fileID: 1188933862}
+    - target: {fileID: 2074578, guid: e030de7040f51124b9a34a928f984c0d, type: 2}
+      propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138264, guid: e030de7040f51124b9a34a928f984c0d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e030de7040f51124b9a34a928f984c0d, type: 2}
   m_IsPrefabParent: 0

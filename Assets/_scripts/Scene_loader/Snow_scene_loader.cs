@@ -5,7 +5,7 @@ public class Snow_scene_loader : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.CompareTag ("Player")) {
-			Application.LoadLevel(3);
+			Application.LoadLevel(5);
 		}
 	}
 }
