@@ -18,5 +18,8 @@ public class DestroyShoot : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("enemy") || col.CompareTag ("penguin"))
 			Destroy (gameObject, 0.1f);
+		if (col.CompareTag ("ground")) {
+			Destroy (gameObject, 0f);
+		}
 	}
 }

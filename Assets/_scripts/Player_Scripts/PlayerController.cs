@@ -21,17 +21,11 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody2D rb;
 	bool grounded = false;
 	float groundRadius = 0.2f;
-	private bool inRun = false;
-	private bool climb = false;
-	private float gravity;
-	private float linearDrag;
-	private bool crouch = false;
-	private bool alive = true;
-	private float nextFire = 0.0f;
-	private float nextSlash = 0.0f;
+	private bool inRun = false, climb = false, crouch = false, alive = true, stopRun = false;
+	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP;
 	private Vector3 resetPos;
-	private float HP;
 	private int i = 0;
+	private float startSpeed;
 	
 	// Use this for initialization
 	void Start () {
@@ -41,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 		linearDrag = rb.drag;
 		resetPos = new Vector3 (this.GetComponent<Transform> ().localPosition.x, this.GetComponent<Transform> ().localPosition.y);
 		HP = startHP;
+		startSpeed = MaxSpeed;
 	}
 	
 	void FixedUpdate () {
@@ -75,6 +70,10 @@ public class PlayerController : MonoBehaviour {
 				run_timer -= Time.deltaTime;
 				if (run_timer < 0) {
 					run_timer = 0;
+					if (!stopRun) {
+						stopRun = true;
+						notRun ();
+					}
 				}
 			}
 			if (!inRun) {
@@ -84,12 +83,14 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 			if (Input.GetButtonDown ("Run") && run_timer > 1) {
+				stopRun = false;
 				inRun = true;
 				run ();
 			}
 			if (Input.GetButtonUp ("Run")) {
 				inRun = false;
-				notRun ();
+				if (!stopRun)
+					notRun ();
 			}
 			if (Input.GetButtonDown ("Crouch")) {
 				m_crouch ();
@@ -162,8 +163,6 @@ public class PlayerController : MonoBehaviour {
 	void run() {
 		MaxSpeed = MaxSpeed * run_multiplikator;
 		anim.SetBool ("run", true);
-		//if (run_timer == 0)
-		//	notRun ();
 	}
 	void notRun() {
 		MaxSpeed = MaxSpeed / run_multiplikator;
@@ -219,7 +218,9 @@ public class PlayerController : MonoBehaviour {
 
 	void reset() {
 		i = 0;
+		run_timer = 10f;
 		HP = startHP;
+		MaxSpeed = startSpeed;
 		this.GetComponent<Transform> ().position = resetPos;
 		anim.SetBool ("dead", false);
 		alive = true;

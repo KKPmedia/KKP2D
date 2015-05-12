@@ -19,6 +19,7 @@ public class HPScript_Bee : MonoBehaviour {
 		// Use this for initialization
 		void Start () {
 			enemy_anim = this.GetComponent<Animator> ();
+		
 			//player_anim = player.GetComponent<Animator> ();
 		}
 		
