@@ -7,6 +7,7 @@ public class FallDownScript : MonoBehaviour {
 	public GameObject plattformer_ground_go;
 	private EdgeCollider2D plattformer_ground_col; 
 
+
 	// Use this for initialization
 	void Start () {
 		player_anim = player_anim.GetComponent<Animator> ();
@@ -15,11 +16,10 @@ public class FallDownScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 	}
 
 	void OnTriggerStay2D (Collider2D col) {
-		if (col.CompareTag ("Player") && Input.GetKeyDown(KeyCode.S)) {
+		if (col.CompareTag ("Player") && Input.GetAxis("Vertical") != 0) {
 			plattformer_ground_col.enabled = false;
 		}
 	}
