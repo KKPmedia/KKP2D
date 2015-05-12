@@ -57,7 +57,7 @@ public class Walk : MonoBehaviour {
 		}
 	}
 	
-	void flip () {
+	public void flip () {
 		direction.x = direction.x * -1;
 		
 		Vector3 theScale = transform.localScale;

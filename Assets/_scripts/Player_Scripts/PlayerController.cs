@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour {
 	
 		if (climb) 
 			climbing ();
-		else
-			if (alive)
+		else if (alive && !crouch)
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * MaxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 		
 		if (move > 0 && !FacingRight)
@@ -84,7 +83,7 @@ public class PlayerController : MonoBehaviour {
 					run_timer = 10;
 				}
 			}
-			if (Input.GetButtonDown ("Run") && run_timer > 0) {
+			if (Input.GetButtonDown ("Run") && run_timer > 1) {
 				inRun = true;
 				run ();
 			}

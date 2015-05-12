@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HP_Script_Fulture : MonoBehaviour {
+public class Hp_Script_FlyingSaurus : MonoBehaviour {
 
+	
 	public float hp = 10;
 	public float main_bullett_damage = 2;
 	public float slash_damage = 5;
-	public GameObject main_bullett;
+	//public GameObject main_bullett;
 	public GameObject meat;
 	public GameObject player;
 	private float direction;
-	DestroyShoot main_bullett_destroy;
+	//DestroyShoot main_bullett_destroy;
 	Animator enemy_anim;
 	private int i = 0;
 	private int x = 0;
@@ -27,7 +28,7 @@ public class HP_Script_Fulture : MonoBehaviour {
 		if (hp < 1) {
 			enemy_anim.SetBool ("dead", true);
 			//this.GetComponent<AttackScript>().enabled = false;
-			//holdOn();
+			holdOn();
 			Invoke ("giveMeat", 0.6f);
 			destroy();
 		}
@@ -36,7 +37,7 @@ public class HP_Script_Fulture : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("main_bullett")) {
 			if (i == 0) {
-				//holdOn();
+			//	holdOn();
 				enemy_anim.SetBool("hurt", true);
 				hp -= main_bullett_damage;
 				Invoke ("setHurtFalse", 0.5f);
@@ -53,8 +54,8 @@ public class HP_Script_Fulture : MonoBehaviour {
 	}
 	
 	void holdOn () {
-		direction = this.GetComponent<Follow> ().getDirection();
-		this.GetComponent<Follow> ().setDirection(0);
+		this.GetComponent<Walk> ().enabled = false;
+		this.GetComponent<Rigidbody2D> ().gravityScale = 5;
 	}
 	
 	void destroy() {
@@ -73,3 +74,4 @@ public class HP_Script_Fulture : MonoBehaviour {
 		//this.GetComponent<Follow> ().direction.x = direction;
 	}
 }
+

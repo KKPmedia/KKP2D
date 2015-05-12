@@ -140,7 +140,7 @@ MonoBehaviour:
   hp: 2
   main_bullett_damage: 2
   slash_damage: 5
-  player: {fileID: 0}
+  player_anim: {fileID: 9505042, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
   slash_delay: 1.5
 --- !u!114 &11461236
 MonoBehaviour:

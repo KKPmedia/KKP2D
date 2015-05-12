@@ -6,12 +6,12 @@ public class HPScript_Bee : MonoBehaviour {
 		public float hp = 10;
 		public float main_bullett_damage = 2;
 		public float slash_damage = 5;
-		public GameObject player;
+		public Animator player_anim;
 		public float slash_delay = 1.5f;
 
 		private float direction;
 		private Animator enemy_anim;
-		private Animator player_anim;
+		//private Animator player_anim;
 		private int i = 0;
 		private float next_slash = 0;
 		private bool slash = false;
@@ -19,7 +19,7 @@ public class HPScript_Bee : MonoBehaviour {
 		// Use this for initialization
 		void Start () {
 			enemy_anim = this.GetComponent<Animator> ();
-			player_anim = player.GetComponent<Animator> ();
+			//player_anim = player.GetComponent<Animator> ();
 		}
 		
 		// Update is called once per frame
@@ -29,7 +29,6 @@ public class HPScript_Bee : MonoBehaviour {
 				holdOn();
 				destroy();
 			}
-
 			if (player_anim.GetBool ("slash")) {
 				slash = true;
 			} else {
