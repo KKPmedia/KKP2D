@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour {
 	void Update() {
 
 		if (alive) {
-			if ((grounded) && Input.GetKeyDown (KeyCode.Space)) {
+			if ((grounded) && Input.GetButtonDown ("Jump") && !crouch) {
 				jump ();
 			}
 
@@ -84,24 +84,24 @@ public class PlayerController : MonoBehaviour {
 					run_timer = 10;
 				}
 			}
-			if (Input.GetKeyDown (KeyCode.LeftShift)) {
+			if (Input.GetButtonDown ("Run") && run_timer > 0) {
 				inRun = true;
 				run ();
 			}
-			if (Input.GetKeyUp (KeyCode.LeftShift)) {
+			if (Input.GetButtonUp ("Run")) {
 				inRun = false;
 				notRun ();
 			}
-			if (Input.GetKeyDown (KeyCode.LeftControl)) {
+			if (Input.GetButtonDown ("Crouch")) {
 				m_crouch ();
 			}
-			if (Input.GetKeyUp (KeyCode.LeftControl)) {
+			if (Input.GetButtonUp ("Crouch")) {
 				notCrouch ();
 			}
-			if (Input.GetMouseButtonDown (0) && Time.time > nextFire) {
+			if (Input.GetButtonDown ("Fire1") && Time.time > nextFire) {
 				shoot ();
 			}
-			if (Input.GetKeyDown (KeyCode.E) && Time.time > nextSlash) {
+			if (Input.GetButtonDown("Hit") && Time.time > nextSlash) {
 				slash ();
 			}
 		}

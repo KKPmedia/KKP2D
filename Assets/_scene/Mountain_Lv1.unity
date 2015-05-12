@@ -5963,7 +5963,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: -4.41215515, y: .338371277}
-  - {x: .551021576, y: .360944271}
+  - {x: -.779518127, y: .360944271}
 --- !u!4 &172823038
 Transform:
   m_ObjectHideFlags: 0
@@ -37221,7 +37221,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 416922, guid: 324e605a1639f904fba6a1b46326d7c7, type: 2}
       propertyPath: m_RootOrder
-      value: 57
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 11429084, guid: 324e605a1639f904fba6a1b46326d7c7, type: 2}
       propertyPath: player
