@@ -12,8 +12,11 @@ GameObject:
   - 212: {fileID: 21234994}
   - 50: {fileID: 5051950}
   - 60: {fileID: 6079174}
+  - 61: {fileID: 6188384}
   - 114: {fileID: 11492170}
   - 114: {fileID: 11490932}
+  - 114: {fileID: 11465056}
+  - 114: {fileID: 11445270}
   m_Layer: 0
   m_Name: dino_grey
   m_TagString: enemy
@@ -28,7 +31,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 523.98999, y: -52.0600014, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +46,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -102,6 +105,19 @@ PolygonCollider2D:
       - {x: -.00999999978, y: -.375}
       - {x: 0, y: -.38499999}
       - {x: 0, y: -.375}
+--- !u!61 &6188384
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116792}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .689999998, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .639999986, y: .300000012}
 --- !u!95 &9597244
 Animator:
   serializedVersion: 3
@@ -119,6 +135,37 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11445270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165be11003692f641b5880ac0e5fbe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  main_bullett_damage: 2
+  slash_damage: 5
+  meat: {fileID: 137912, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
+  player: {fileID: 0}
+  slash_delay: 1.5
+--- !u!114 &11465056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d39c159f8907c499d4a2615abdcfd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 6, y: 10}
+  direction: {x: 1, y: 0}
+  distance_x: 7
 --- !u!114 &11490932
 MonoBehaviour:
   m_ObjectHideFlags: 1

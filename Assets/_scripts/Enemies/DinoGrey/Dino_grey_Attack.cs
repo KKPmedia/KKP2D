@@ -25,7 +25,7 @@ public class Dino_grey_Attack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.localPosition.y >= thisY && !saw && onStartPosition) {
+		if (!saw && onStartPosition && player.localPosition.y <= (thisY + 1) && player.localPosition.y >= (thisY - 1)) {
 			saw = true;
 			onStartPosition = false;
 			ssms.startWalkScript();
@@ -53,5 +53,17 @@ public class Dino_grey_Attack : MonoBehaviour {
 		walk.flip();
 		walk.setSpeed(walkSpeed / 2);
 		enemy_anim.SetBool("walk", true);
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.CompareTag ("attack_area")) {
+			enemy_anim.SetBool ("attack", true);
+		}
+	}
+
+	void OnTriggerExit2D (Collider2D col) {
+		if (col.CompareTag ("attack_area")) {
+			enemy_anim.SetBool ("attack", false);
+		} 
 	}
 }

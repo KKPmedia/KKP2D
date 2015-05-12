@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetButtonUp ("Crouch")) {
 				notCrouch ();
 			}
-			if (Input.GetButtonDown ("Fire1") && Time.time > nextFire) {
+			if (Input.GetButtonDown ("Fire1") && Time.time > nextFire && !anim.GetBool("climb")) {
 				shoot ();
 			}
 			if (Input.GetButtonDown("Hit") && Time.time > nextSlash) {
@@ -162,8 +162,8 @@ public class PlayerController : MonoBehaviour {
 	void run() {
 		MaxSpeed = MaxSpeed * run_multiplikator;
 		anim.SetBool ("run", true);
-		if (run_timer == 0)
-			notRun ();
+		//if (run_timer == 0)
+		//	notRun ();
 	}
 	void notRun() {
 		MaxSpeed = MaxSpeed / run_multiplikator;
@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	void shoot() {
 		float move = Input.GetAxis ("Horizontal");
-		if (!climb && move == 0 || !grounded) {
+		if (move == 0 || !grounded) {
 			nextFire = Time.time + fireRate;
 			anim.SetBool ("shoot", true);
 			if (!crouch)
