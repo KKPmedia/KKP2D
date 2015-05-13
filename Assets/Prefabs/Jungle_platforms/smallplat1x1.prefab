@@ -8,7 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482204}
-  - 114: {fileID: 11485842}
+  - 50: {fileID: 5032162}
+  - 114: {fileID: 11478066}
   m_Layer: 0
   m_Name: smallplat1x1
   m_TagString: Untagged
@@ -96,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 173.460007, y: -7.23999977, z: 0}
+  m_LocalPosition: {x: 129, y: -5.05000019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484652}
@@ -116,6 +117,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 482204}
   m_RootOrder: 0
+--- !u!50 &5032162
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146452}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!68 &6835342
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -130,7 +146,7 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.06530762, y: .461738586}
   - {x: .391098022, y: .453029633}
---- !u!114 &11485842
+--- !u!114 &11478066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,11 +154,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 146452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3153518d60cc9524b8f33d2c78b31080, type: 3}
+  m_Script: {fileID: 11500000, guid: f384166dba1058643b624a2b00c60bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_anim: {fileID: 0}
-  plattformer_ground_go: {fileID: 185518}
+  speed: {x: 2.5, y: 10}
+  direction: {x: 1, y: 0}
+  turnToRight: 129
+  turnToLeft: 154
 --- !u!212 &21203766
 SpriteRenderer:
   m_ObjectHideFlags: 1

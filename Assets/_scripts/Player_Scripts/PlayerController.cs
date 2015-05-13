@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public Transform ShotSpawn;
 	public float fireRate = 1.5f;
 	public float slashRate = 1f;
+	public GameObject pauseMenu;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 resetPos;
 	private int i = 0;
 	private float startSpeed;
+	private bool pause = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour {
 		resetPos = new Vector3 (this.GetComponent<Transform> ().localPosition.x, this.GetComponent<Transform> ().localPosition.y);
 		HP = startHP;
 		startSpeed = MaxSpeed;
+
+		pauseMenu.SetActive (false);
 	}
 	
 	void FixedUpdate () {
@@ -61,7 +65,19 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		if (alive) {
+		if (Input.GetButtonDown ("Pause")) {
+			if (pause) {
+				Time.timeScale = 1;
+				pauseMenu.SetActive(false);
+				pause = false;
+			} else if (!pause) {
+				Time.timeScale = 0;
+				pauseMenu.SetActive(true);
+				pause = true;
+			}
+		}
+
+		if (alive && !pause) {
 			if ((grounded) && Input.GetButtonDown ("Jump") && !crouch) {
 				jump ();
 			}
@@ -224,6 +240,10 @@ public class PlayerController : MonoBehaviour {
 		this.GetComponent<Transform> ().position = resetPos;
 		anim.SetBool ("dead", false);
 		alive = true;
+	}
+
+	void setPauseTrue () {
+		pause = true;
 	}
 
 	void setSlashFalse() {
