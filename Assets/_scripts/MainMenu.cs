@@ -6,10 +6,12 @@ public class MainMenu : MonoBehaviour
 
 	public void ChangeToScene (int sceneToChangeTo){
 		if (sceneToChangeTo > 12) {
-			Application.Quit();
+			Application.Quit ();
+		} else { 
+			if (Time.timeScale < 1)
+				Time.timeScale = 1;
+			Application.LoadLevel (sceneToChangeTo);
 		}
-		else
-		Application.LoadLevel (sceneToChangeTo);
 	}
 
 
