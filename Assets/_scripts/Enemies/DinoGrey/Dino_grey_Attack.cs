@@ -8,6 +8,7 @@ public class Dino_grey_Attack : MonoBehaviour {
 	StartStopMoveScript ssms;
 	Animator enemy_anim;
 	Walk walk;
+	WalkLeft walkL;
 	private float thisY, stopPoint, walkSpeed, startPos;
 	private bool saw = false, onStartPosition = true;
 
@@ -16,11 +17,15 @@ public class Dino_grey_Attack : MonoBehaviour {
 		thisY = this.GetComponent<Transform> ().localPosition.y;	
 		startPos = this.GetComponent<Transform> ().localPosition.x;
 		enemy_anim = this.GetComponent<Animator> ();
-		walk = this.GetComponent<Walk> ();
-		stopPoint = walk.getDirection ();
-		walkSpeed = walk.getSpeed ();
+		if (this.GetComponent<Walk> () != null) {
+			walk = this.GetComponent<Walk> ();
+		} else if (this.GetComponent <WalkLeft> () != null) {
+			walkL = this.GetComponent<WalkLeft>();
+		}
+		stopPoint = walkL.getDirection ();
+		walkSpeed = walkL.getSpeed ();
 		ssms = this.GetComponent<StartStopMoveScript> ();
-		ssms.stopWalkScript();
+		ssms.stopWalkLeftScript();
 	}
 	
 	// Update is called once per frame
@@ -28,30 +33,30 @@ public class Dino_grey_Attack : MonoBehaviour {
 		if (!saw && onStartPosition && player.localPosition.y <= (thisY + 1) && player.localPosition.y >= (thisY - 1)) {
 			saw = true;
 			onStartPosition = false;
-			ssms.startWalkScript();
-			walk.setSpeed(walkSpeed);
+			ssms.startWalkLeftScript();
+			walkL.setSpeed(walkSpeed);
 			enemy_anim.SetBool ("walk", true);
 		}
 
-		if (walk.getDirection() != stopPoint && saw) {
+		if (walkL.getDirection() != stopPoint && saw) {
 			saw = false;
-			walk.flip();
-			walk.setSpeed(0);
+			walkL.flip();
+			walkL.setSpeed(0);
 			enemy_anim.SetBool("walk", false);
 			Invoke ("walkBack", 2f);
 		}
 
-		if (this.GetComponent<Transform> ().localPosition.x <= startPos && onStartPosition == false && walk.getDirection() < stopPoint) {
+		if (this.GetComponent<Transform> ().localPosition.x >= startPos && onStartPosition == false && walkL.getDirection() > stopPoint) {
 			onStartPosition = true;
-			walk.flip();
-			walk.setSpeed(0);
+			walkL.flip();
+			walkL.setSpeed(0);
 			enemy_anim.SetBool("walk", false);
 		}
 	}
 
 	void walkBack() {
-		walk.flip();
-		walk.setSpeed(walkSpeed / 2);
+		walkL.flip();
+		walkL.setSpeed(walkSpeed / 2);
 		enemy_anim.SetBool("walk", true);
 	}
 

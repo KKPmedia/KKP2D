@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour {
 	public float timer = 0.0f;
 	public bool timerStarted = false;
 	private Text instruction;
-	float i = 0, x = 0, y = 0, c = 0, a = 0;
+	float x = 0, y = 0, c = 0, a = 0;
 	// Use this for initialization
 	    	
 	void Start() {

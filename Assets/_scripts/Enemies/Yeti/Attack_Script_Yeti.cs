@@ -9,7 +9,7 @@ public class Attack_Script_Yeti : MonoBehaviour {
 	Walk walk;
 	float direction;
 	public Vector2 forceAfterHit = new Vector2 (-10f, 0f);
-	private Vector2 dir = new Vector2 (1f, 0f);
+	//private Vector2 dir = new Vector2 (1f, 0f);
 	private Vector2 movement;
 	
 	// Use this for initialization

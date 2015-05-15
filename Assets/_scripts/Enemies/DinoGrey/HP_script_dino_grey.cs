@@ -28,7 +28,7 @@ public class HP_script_dino_grey : MonoBehaviour {
 			enemy_anim.SetBool ("dead", true);
 			//this.GetComponent<AttackScript>().enabled = false;
 			holdOn();
-			Invoke ("giveMeat", 0.6f);
+			//Invoke ("giveMeat", 0.6f);
 			destroy();
 		}
 	}
@@ -53,8 +53,8 @@ public class HP_script_dino_grey : MonoBehaviour {
 	}
 	
 	void holdOn () {
-		direction = this.GetComponent<Walk> ().getDirection();
-		this.GetComponent<Walk> ().setDirection(0);
+		direction = this.GetComponent<WalkLeft> ().getDirection();
+		this.GetComponent<WalkLeft> ().setDirection(0);
 	}
 	
 	void destroy() {

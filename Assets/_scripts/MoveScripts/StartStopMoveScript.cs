@@ -27,4 +27,10 @@ public class StartStopMoveScript : MonoBehaviour {
 	public void startFollowScript() {
 		this.GetComponent<Follow> ().enabled = true;
 	}
+	public void stopWalkLeftScript() {
+		this.GetComponent<WalkLeft>().enabled = false;
+	}
+	public void startWalkLeftScript() {
+		this.GetComponent<WalkLeft> ().enabled = true;
+	}
 }

@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody2D rb;
 	bool grounded = false;
 	float groundRadius = 0.2f;
-	private bool inRun = false, climb = false, crouch = false, alive = true, stopRun = false;
+	private bool inRun = false, climb = false, crouch = false, alive = true, stopRun = false, standOnMovingPlattform = false;
 	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP;
 	private Vector3 resetPos;
+	private Vector2 plattformDirection, plattformSpeed;
 	private int i = 0;
 	private float startSpeed;
 	private bool pause = false;
@@ -53,13 +54,19 @@ public class PlayerController : MonoBehaviour {
 	
 		if (climb) 
 			climbing ();
-		else if (alive && !crouch)
+		else if (alive && !crouch) {
+			if (standOnMovingPlattform && grounded) {
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 ((move * MaxSpeed) + (plattformSpeed.x * plattformDirection.x), 
+				                                                     GetComponent<Rigidbody2D> ().velocity.y);
+			} else {
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * MaxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+			}
+		}
 		
 		if (move > 0 && !FacingRight)
 			Flip ();
 		else if (move < 0 && FacingRight)
-			Flip();
+			Flip ();
 	}
 	
 	// Update is called once per frame
@@ -161,14 +168,24 @@ public class PlayerController : MonoBehaviour {
 				anim.SetBool("climb", true);
 			}
 		}
+
+		if (col.CompareTag ("platform")) {
+			standOnMovingPlattform = true;
+			plattformDirection = col.GetComponent<Plattform_Side_Move>().getDirection();
+			plattformSpeed = col.GetComponent<Plattform_Side_Move>().getSpeed();
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D col) {
 		if (col.CompareTag ("Ladder")) {
 			rb.gravityScale = gravity;
 			rb.drag = linearDrag;
-			anim.SetBool("climb", false);
+			anim.SetBool ("climb", false);
 			climb = false;
+		}
+
+		if (col.CompareTag ("platform")) {
+			standOnMovingPlattform = false;
 		}
 	}
 

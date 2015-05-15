@@ -42,5 +42,13 @@ public class Plattform_Side_Move : MonoBehaviour {
 	void flip () {
 		direction.x = direction.x * -1;
 	}
+
+	public Vector2 getDirection () {
+		return direction;
+	}
+
+	public Vector2 getSpeed () {
+		return speed;
+	}
 }
 

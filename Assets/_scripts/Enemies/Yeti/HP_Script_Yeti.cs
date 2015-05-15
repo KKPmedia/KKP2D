@@ -40,10 +40,11 @@ public class HP_Script_Yeti : MonoBehaviour {
 		}
 
 		if (starthp < 1) {
+			this.GetComponent<PolygonCollider2D>().enabled = false;
 			enemy_anim.SetBool ("dead", true);
 			//this.GetComponent<???>().enabled = false;
 			holdOn();
-			Invoke ("giveMeat", 1f);
+			//Invoke ("giveMeat", 1f);
 			destroy();
 		}
 	}
