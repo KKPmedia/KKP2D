@@ -325,7 +325,7 @@ Transform:
   - {fileID: 1380759511}
   - {fileID: 1356223137}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
 --- !u!1001 &10115981
 Prefab:
   m_ObjectHideFlags: 0
@@ -2036,7 +2036,7 @@ Transform:
   - {fileID: 1399082985}
   - {fileID: 1889598881}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
 --- !u!1 &53706534
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,6 +4290,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 571836241}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -5041,8 +5045,9 @@ Transform:
   - {fileID: 295186530}
   - {fileID: 581861001}
   - {fileID: 1601384032}
+  - {fileID: 1886007290}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
 --- !u!1 &162087879
 GameObject:
   m_ObjectHideFlags: 0
@@ -13375,7 +13380,7 @@ Prefab:
       objectReference: {fileID: 958884609}
     - target: {fileID: 187684, guid: 7c9d19774b9857b4ab12ff5f74dcf84a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c9d19774b9857b4ab12ff5f74dcf84a, type: 2}
@@ -14741,7 +14746,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 092398c4b0f592f478a1fc1f0eac44ae, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .5
+  m_Volume: .254000008
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -23637,6 +23642,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 571836241}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -29708,7 +29717,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 30
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 486.999969, y: 228.999985}
@@ -29989,6 +29998,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 571836241}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -31705,6 +31718,10 @@ Prefab:
       propertyPath: m_Name
       value: dino_plant 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -33219,7 +33236,7 @@ Transform:
   m_LocalScale: {x: -2.0186286, y: 2.0186286, z: 2.02609968}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 24
 --- !u!1001 &1050273065
 Prefab:
   m_ObjectHideFlags: 0
@@ -35596,7 +35613,7 @@ Transform:
   - {fileID: 1925425159}
   - {fileID: 351694675}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
 --- !u!1 &1125033531
 GameObject:
   m_ObjectHideFlags: 0
@@ -48697,7 +48714,7 @@ Prefab:
       objectReference: {fileID: 323839105}
     - target: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11449186, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: player
@@ -51427,6 +51444,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 571836241}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -56713,6 +56734,10 @@ Prefab:
       propertyPath: m_Name
       value: dino_plant 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
@@ -60508,15 +60533,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 161960403}
     m_Modifications:
     - target: {fileID: 443002, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 177.576096
+      value: 132.267761
       objectReference: {fileID: 0}
     - target: {fileID: 443002, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.63236523
+      value: 4.5982461
       objectReference: {fileID: 0}
     - target: {fileID: 443002, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
       propertyPath: m_LocalPosition.z
@@ -60540,7 +60565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443002, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 144398, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
       propertyPath: m_Name
@@ -60549,6 +60574,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1886007290
+Transform:
+  m_PrefabParentObject: {fileID: 443002, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+  m_PrefabInternal: {fileID: 1886007289}
 --- !u!1 &1886340770
 GameObject:
   m_ObjectHideFlags: 0
@@ -61085,6 +61114,10 @@ Prefab:
       propertyPath: m_Name
       value: dino_plant 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11402290, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 323839105}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1a46457dd0f4b91b8f52dedbef54, type: 2}
   m_IsPrefabParent: 0
