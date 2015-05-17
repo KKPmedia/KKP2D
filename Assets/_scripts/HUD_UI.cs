@@ -8,6 +8,7 @@ public class HUD_UI : MonoBehaviour {
 	public GameObject player;
 	public GameObject hp_bar;
 	public GameObject money_text;
+	public GameObject playerName;
 
 	private string earned_Money;
 	private Image hp_fill_img;
@@ -38,6 +39,8 @@ public class HUD_UI : MonoBehaviour {
 
 		//earned_Money = money_text.GetComponent<Text> ().text;
 		earned_Money = "0";
+
+		playerName.GetComponent<Text> ().text = PlayerPrefs.GetString("Name");
 	}
 	
 	// Update is called once per frame

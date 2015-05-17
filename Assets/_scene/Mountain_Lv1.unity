@@ -19835,8 +19835,13 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 11471500, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
     - {fileID: 11449186, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
+    - {fileID: 11410056, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &649980585
+GameObject:
+  m_PrefabParentObject: {fileID: 106968, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
+  m_PrefabInternal: {fileID: 649980584}
 --- !u!1 &650188838
 GameObject:
   m_ObjectHideFlags: 0
@@ -35458,11 +35463,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484232, guid: 06a7b456bd3cf8a45bfff96baae2ee9b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.75566769
+      value: -9.56999969
       objectReference: {fileID: 0}
     - target: {fileID: 484232, guid: 06a7b456bd3cf8a45bfff96baae2ee9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.38163662
+      value: -.379999995
       objectReference: {fileID: 0}
     - target: {fileID: 484232, guid: 06a7b456bd3cf8a45bfff96baae2ee9b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -35510,7 +35515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417914, guid: 06a7b456bd3cf8a45bfff96baae2ee9b, type: 2}
       propertyPath: distance_x
-      value: 5.5
+      value: 5.19999981
       objectReference: {fileID: 0}
     - target: {fileID: 11469206, guid: 06a7b456bd3cf8a45bfff96baae2ee9b, type: 2}
       propertyPath: player
@@ -49225,7 +49230,7 @@ Transform:
   - {fileID: 1828577831}
   - {fileID: 651581598}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 25
 --- !u!61 &1581604085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65359,6 +65364,7 @@ MonoBehaviour:
   player: {fileID: 1827001300}
   hp_bar: {fileID: 847992570}
   money_text: {fileID: 1899801446}
+  playerName: {fileID: 649980585}
   lp_3: {fileID: 1429290239}
   lp_2: {fileID: 51539407}
   lp_1: {fileID: 1945106798}

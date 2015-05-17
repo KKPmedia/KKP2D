@@ -438,7 +438,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467686}
-  - 114: {fileID: 11449186}
+  - 114: {fileID: 11410056}
   m_Layer: 0
   m_Name: HUD_UI
   m_TagString: Untagged
@@ -544,6 +544,25 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11410056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eecc34a4cdca534f84ad2643e301dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nrg_bar: {fileID: 184604}
+  player: {fileID: 0}
+  hp_bar: {fileID: 194878}
+  money_text: {fileID: 126328}
+  playerName: {fileID: 106968}
+  lp_3: {fileID: 127606}
+  lp_2: {fileID: 130176}
+  lp_1: {fileID: 148622}
 --- !u!114 &11410760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -798,24 +817,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11449186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eecc34a4cdca534f84ad2643e301dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nrg_bar: {fileID: 184604}
-  player: {fileID: 0}
-  hp_bar: {fileID: 194878}
-  money_text: {fileID: 126328}
-  lp_3: {fileID: 127606}
-  lp_2: {fileID: 130176}
-  lp_1: {fileID: 148622}
 --- !u!114 &11456086
 MonoBehaviour:
   m_ObjectHideFlags: 1
