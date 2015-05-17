@@ -46,4 +46,8 @@ public class Plattform_UpNDown_Move : MonoBehaviour {
 	void flip () {
 		direction.y = direction.y * -1;		
 	}
+
+	public Vector2 getSpeed() {
+		return speed;
+	}
 }

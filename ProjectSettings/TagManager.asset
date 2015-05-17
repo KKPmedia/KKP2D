@@ -23,6 +23,7 @@ TagManager:
   - ground
   - fulture
   - platform
+  - checkpoint
   layers:
   - Default
   - TransparentFX

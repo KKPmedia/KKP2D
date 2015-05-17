@@ -63,9 +63,9 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 		
-		if (move > 0 && !FacingRight)
+		if (move > 0 && !FacingRight && alive)
 			Flip ();
-		else if (move < 0 && FacingRight)
+		else if (move < 0 && FacingRight && alive)
 			Flip ();
 	}
 	
@@ -157,6 +157,11 @@ public class PlayerController : MonoBehaviour {
 				climb = true;
 				anim.SetBool("climb", true);
 			}
+		}
+
+		if (col.CompareTag ("checkpoint")) {
+			resetPos = col.transform.position;
+			Destroy(col);
 		}
 	}
 

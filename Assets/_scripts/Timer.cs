@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour {
 	public float timer = 0.0f;
 	public bool timerStarted = false;
 	private Text instruction;
+	static string time;
 	float x = 0, y = 0, c = 0, a = 0;
 	// Use this for initialization
 	    	
@@ -35,4 +36,9 @@ public class Timer : MonoBehaviour {
 			instruction.text = a.ToString () + ":" + c.ToString () + ":" + x.ToString () + y.ToString ();
 		}
 	 }
+
+	public static string getTime() {
+		time = instruction.text;
+		return time;
 	}
+}
