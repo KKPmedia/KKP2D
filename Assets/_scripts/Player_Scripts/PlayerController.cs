@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public float MaxSpeed = 30f;
 	public float run_multiplikator = 1.5f;
 	public float run_timer = 10f;
-	static bool FacingRight = true;
+	static bool FacingRight;
 	public Transform GroundCheck;
 	public LayerMask whatIsGrounded;
 	public float jumpForce = 800f;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 	bool grounded = false;
 	float groundRadius = 0.2f;
 	private bool inRun = false, climb = false, crouch = false, alive = true, stopRun = false, standOnMovingPlattform = false;
-	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP, lives = 1;
+	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP, lives = 3;
 	private Vector3 resetPos;
 	private Vector2 plattformDirection, plattformSpeed;
 	private int i = 0;
@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		if (transform.localScale.x < 0)
+			Flip();
+		FacingRight = true;
 		anim = gameObject.GetComponent<Animator>();
 		rb = this.GetComponent<Rigidbody2D> ();
 		gravity = rb.gravityScale;
@@ -251,23 +254,25 @@ public class PlayerController : MonoBehaviour {
 		alive = false;
 		lives--;
 		anim.SetBool ("dead", true);
-		if (lives < 0) {
-			gameOver.SetActive (true);
-			Time.timeScale = 0;
-		} else if (i == 0) {
+		if (i == 0) {
 			Invoke ("reset", 3f);
 			i++;
 		}
 	}
 
 	void reset() {
-		i = 0;
-		run_timer = 10f;
-		HP = startHP;
-		MaxSpeed = startSpeed;
-		this.GetComponent<Transform> ().position = resetPos;
-		anim.SetBool ("dead", false);
-		alive = true;
+		if (lives < 0) {
+			gameOver.SetActive (true);
+			Time.timeScale = 0;
+		} else {
+			i = 0;
+			run_timer = 10f;
+			HP = startHP;
+			MaxSpeed = startSpeed;
+			this.GetComponent<Transform> ().position = resetPos;
+			anim.SetBool ("dead", false);
+			alive = true;
+		}
 	}
 
 	void setPauseTrue () {

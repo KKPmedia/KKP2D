@@ -3327,6 +3327,7 @@ GameObject:
   - 4: {fileID: 177161363}
   - 61: {fileID: 177161365}
   - 114: {fileID: 177161364}
+  - 114: {fileID: 177161366}
   m_Layer: 0
   m_Name: Finish
   m_TagString: Untagged
@@ -3370,6 +3371,17 @@ BoxCollider2D:
   m_Offset: {x: 11.9090614, y: 22.7379456}
   serializedVersion: 2
   m_Size: {x: 1.86079025, y: 13.491394}
+--- !u!114 &177161366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 177161362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c793e884b0461f546ad5adf8725c9175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &178454890
 GameObject:
   m_ObjectHideFlags: 0
@@ -21482,7 +21494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1329476023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25219,7 +25231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499630, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: pauseMenu
