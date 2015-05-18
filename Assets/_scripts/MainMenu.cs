@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour 
 {
-	public GameObject player;
 
 	public void ChangeToScene (int sceneToChangeTo){
 		if (sceneToChangeTo > 12) {

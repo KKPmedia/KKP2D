@@ -7,7 +7,7 @@ public class PlayerName : MonoBehaviour {
 	public GameObject text_field;
 
 	void Start() {
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 	}
 
 	void Update() {

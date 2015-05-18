@@ -10,7 +10,7 @@ public class HUD_UI : MonoBehaviour {
 	public GameObject money_text;
 	public GameObject playerName;
 
-	private string earned_Money;
+	public static string earned_Money;
 	private Image hp_fill_img;
 	private Image nrg_bar_img;
 	private PlayerController pc;
@@ -23,6 +23,7 @@ public class HUD_UI : MonoBehaviour {
 	private Image lp_1_img;
 
 	private int lifes = 3;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -69,7 +70,7 @@ public class HUD_UI : MonoBehaviour {
 		}
 	}
 
-	public float getEarnedMoney() {
+	public static float getEarnedMoney() {
 		return float.Parse(earned_Money);
 	}
 

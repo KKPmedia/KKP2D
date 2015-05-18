@@ -147,9 +147,9 @@ public class PlayerController : MonoBehaviour {
 
 		Vector3 position = transform.localPosition;
 		if (FacingRight)
-			position.x += 1;
+			position.x += 0.5f;
 		if (!FacingRight)
-			position.x -= 1;
+			position.x -= 0.5f;
 
 		transform.localPosition = position;
 		transform.localScale = theScale;
