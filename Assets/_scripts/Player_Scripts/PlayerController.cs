@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour {
 	public float fireRate = 1.5f;
 	public float slashRate = 1f;
 	public GameObject pauseMenu;
+	public GameObject gameOver;
 
 	Animator anim;
 	Rigidbody2D rb;
 	bool grounded = false;
 	float groundRadius = 0.2f;
 	private bool inRun = false, climb = false, crouch = false, alive = true, stopRun = false, standOnMovingPlattform = false;
-	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP;
+	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP, lives = 1;
 	private Vector3 resetPos;
 	private Vector2 plattformDirection, plattformSpeed;
 	private int i = 0;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 		startSpeed = MaxSpeed;
 
 		pauseMenu.SetActive (false);
+		gameOver.SetActive (false);
 	}
 	
 	void FixedUpdate () {
@@ -72,12 +74,12 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		if (Input.GetButtonDown ("Pause")) {
+		if (Input.GetButtonDown ("Pause") && alive) {
 			if (pause) {
 				Time.timeScale = 1;
 				pauseMenu.SetActive(false);
 				pause = false;
-			} else if (!pause) {
+			} else if (!pause && alive) {
 				Time.timeScale = 0;
 				pauseMenu.SetActive(true);
 				pause = true;
@@ -247,8 +249,12 @@ public class PlayerController : MonoBehaviour {
 
 	public void dead() {
 		alive = false;
+		lives--;
 		anim.SetBool ("dead", true);
-		if (i == 0) {
+		if (lives < 0) {
+			gameOver.SetActive (true);
+			Time.timeScale = 0;
+		} else if (i == 0) {
 			Invoke ("reset", 3f);
 			i++;
 		}

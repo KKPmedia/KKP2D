@@ -21,6 +21,7 @@ public class HUD_UI : MonoBehaviour {
 	private Image lp_2_img;
 	public GameObject lp_1;
 	private Image lp_1_img;
+
 	private int lifes = 3;
 
 	// Use this for initialization
@@ -74,5 +75,9 @@ public class HUD_UI : MonoBehaviour {
 
 	public void setEarnedMoney(float x) {
 		earned_Money = x.ToString();
+	}
+
+	public int getLives() {
+		return lifes;
 	}
 }
