@@ -3382,6 +3382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c793e884b0461f546ad5adf8725c9175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin_mul: 2.5
 --- !u!1 &178454890
 GameObject:
   m_ObjectHideFlags: 0
@@ -10078,6 +10079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c793e884b0461f546ad5adf8725c9175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin_mul: 2.5
 --- !u!4 &643768712
 Transform:
   m_ObjectHideFlags: 0
@@ -15716,10 +15718,6 @@ EdgeCollider2D:
   - {x: 12.9135284, y: -65.0352936}
   - {x: 13.1447382, y: -35.1076927}
   - {x: 13.1334076, y: 22.2309265}
---- !u!1 &995783633
-GameObject:
-  m_PrefabParentObject: {fileID: 126264, guid: dab3369e3abeae34eb3ee2a44bf4b688, type: 2}
-  m_PrefabInternal: {fileID: 1089698733}
 --- !u!1 &1001837646
 GameObject:
   m_ObjectHideFlags: 0
@@ -17237,6 +17235,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1830492904}
+    - target: {fileID: 116434, guid: dab3369e3abeae34eb3ee2a44bf4b688, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dab3369e3abeae34eb3ee2a44bf4b688, type: 2}
   m_IsPrefabParent: 0
@@ -25250,11 +25252,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 499630, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -34.4900017
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 499630, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.19999981
+      value: 90.0999985
       objectReference: {fileID: 0}
     - target: {fileID: 499630, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -25287,7 +25289,7 @@ Prefab:
     - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
       propertyPath: gameOver
       value: 
-      objectReference: {fileID: 995783633}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
   m_IsPrefabParent: 0

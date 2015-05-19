@@ -10,10 +10,12 @@ public class HUD_UI : MonoBehaviour {
 	public GameObject money_text;
 	public GameObject playerName;
 
-	public static string earned_Money;
+ 	public string earned_Money;
 	private Image hp_fill_img;
 	private Image nrg_bar_img;
 	private PlayerController pc;
+
+	public static float money;
 
 	public GameObject lp_3;
 	private Image lp_3_img;
@@ -47,6 +49,7 @@ public class HUD_UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		money = float.Parse(earned_Money);
 
 		money_text.GetComponent<Text>().text = earned_Money + "$";
 
@@ -70,7 +73,7 @@ public class HUD_UI : MonoBehaviour {
 		}
 	}
 
-	public static float getEarnedMoney() {
+	public float getEarnedMoney() {
 		return float.Parse(earned_Money);
 	}
 

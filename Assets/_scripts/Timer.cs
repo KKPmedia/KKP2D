@@ -8,7 +8,8 @@ public class Timer : MonoBehaviour {
 	public bool timerStarted = false;
 	static Text instruction;
 
-	float x = 0, y = 0, c = 0, a = 0;
+	float x = 0, y = 0, c = 0;
+	static float a = 0;
 	// Use this for initialization
 	    	
 	void Start() {
@@ -18,8 +19,6 @@ public class Timer : MonoBehaviour {
   	void Update(){
 		if (timerStarted = true) {
 			y += Time.timeScale;
-			//i = Mathf.Round(i);
-			//decimal d = Mathf.Round ((decimal)i, 1);
 			if (y >= 9) {
 				y = 0;
 				x++;
@@ -39,5 +38,9 @@ public class Timer : MonoBehaviour {
 
 	public static string getTime() {
 		return instruction.ToString();
+	}
+
+	public static int getMin() {
+		return System.Int32.Parse(a.ToString());
 	}
 }
