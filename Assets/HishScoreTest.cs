@@ -15,7 +15,7 @@ public class HishScoreTest : MonoBehaviour {
 	List<Scores> highscore;
 	
 	// Use this for initialization
-	void Start () {
+	void OnEnable() {
 		//EventManager._instance._buttonClick += ButtonClicked;
 		
 		highscore = new List<Scores>();
@@ -30,7 +30,6 @@ public class HishScoreTest : MonoBehaviour {
 				i++;
 			}
 		}
-		i = 0;
 		name_disp.text = nametable;
 		scores_disp.text = scorestable;
 	}
