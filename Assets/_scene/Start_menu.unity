@@ -1077,13 +1077,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680116610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54115be58d9528d4b997aaa9951c0dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name_disp: {fileID: 470302546}
   scores_disp: {fileID: 145288857}
+  update: 0
 --- !u!114 &680116614
 MonoBehaviour:
   m_ObjectHideFlags: 0

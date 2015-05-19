@@ -4,40 +4,48 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class HishScoreTest : MonoBehaviour {
-	
-	//string name="";
-	//string score="";
+
 	public Text name_disp;
 	public Text scores_disp;
+	public bool update;
 	string nametable;
 	string scorestable;
-	int i = 0;
 	List<Scores> highscore;
-	
+	int x = 0;
+
 	// Use this for initialization
-	void OnEnable() {
+	void Start() {
 		//EventManager._instance._buttonClick += ButtonClicked;
-		
-		highscore = new List<Scores>();
 
-		//HighScoreController._instance.ClearLeaderBoard ();
-		highscore = HighScoreController._instance.GetHighScore(); 
-
-		if (i == 0) {
-			foreach (Scores _score in highscore) {
-				nametable += _score.name + "\n";
-				scorestable += _score.score + "\n";
-				i++;
-			}
-		}
-		name_disp.text = nametable;
-		scores_disp.text = scorestable;
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
+	void Update() {
+		//EventManager._instance._buttonClick += ButtonClicked;
+		if (update) {
+			drawNew();
+		}
+	}
 
+	public void setUpdate(bool x) {
+		update = x;
+	}
+
+	private void drawNew() {
+			
+		update = false;
+			highscore = new List<Scores> ();
+			int i = highscore.Count;
+			highscore = HighScoreController._instance.GetHighScore (); 
+			
+			foreach (Scores _score in highscore) {
+				//if (en == true && x < i) {
+				nametable += _score.name + "\n";
+				scorestable += _score.score + "\n";
+				x ++;
+				//}
+			}
+		name_disp.text = nametable;
+		scores_disp.text = scorestable;
 	}
 }
 

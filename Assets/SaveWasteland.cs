@@ -4,6 +4,7 @@ using System.IO;
 
 public class SaveWasteland : MonoBehaviour {
 
+
 	public float coin_mul = 2.5f;
 
 	private string name;
