@@ -420,6 +420,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1201347153}
+    - target: {fileID: 116792, guid: 1c047b923025ab742ad77cd07442b07e, type: 2}
+      propertyPath: m_Name
+      value: dino_grey_left
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11465056, guid: 1c047b923025ab742ad77cd07442b07e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1c047b923025ab742ad77cd07442b07e, type: 2}

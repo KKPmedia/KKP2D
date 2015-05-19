@@ -10,7 +10,11 @@ public class HUD_UI : MonoBehaviour {
 	public GameObject money_text;
 	public GameObject playerName;
 
+<<<<<<< HEAD
  	public string earned_Money;
+=======
+	private string earned_Money;
+>>>>>>> origin/master
 	private Image hp_fill_img;
 	private Image nrg_bar_img;
 	private PlayerController pc;
