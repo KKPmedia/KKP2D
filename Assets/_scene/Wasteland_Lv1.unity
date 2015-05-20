@@ -3386,7 +3386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c793e884b0461f546ad5adf8725c9175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin_mul: 2.5
+  coin_mul: 2
 --- !u!1 &178454890
 GameObject:
   m_ObjectHideFlags: 0
@@ -10083,7 +10083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c793e884b0461f546ad5adf8725c9175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin_mul: 2.5
+  coin_mul: 2
 --- !u!4 &643768712
 Transform:
   m_ObjectHideFlags: 0

@@ -291,6 +291,10 @@ public class PlayerController : MonoBehaviour {
 		anim.SetBool ("shoot", false);
 	}
 
+	public float getLives() {
+		return lives;
+	}
+
 	public void setHP(float x) {
 		this.HP = x;
 	}

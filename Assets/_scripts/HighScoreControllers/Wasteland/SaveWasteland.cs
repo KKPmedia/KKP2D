@@ -4,7 +4,7 @@ using System.IO;
 
 public class SaveWasteland : MonoBehaviour {
 
-
+	public PlayerController player;
 	public int coin_mul = 2;
 
 	private string name;
@@ -13,7 +13,7 @@ public class SaveWasteland : MonoBehaviour {
 	private int money_i;
 	private int time;
 	private int score;
-	private int i;
+	private int i, lives;
 
 
 	void Update() {
@@ -23,16 +23,16 @@ public class SaveWasteland : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
-			//i = 0;
+
 		if (col.CompareTag ("Player")) {
-			i=1;
+			i = 1;
 		}
 	}
 
 	void save() {
 		i = 0;
 		name = PlayerPrefs.GetString ("Name");
-
+		lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
 			
 		if (time < 2) 
@@ -50,9 +50,9 @@ public class SaveWasteland : MonoBehaviour {
 
 		money_s = money.ToString();
 		money_i = int.Parse(money_s);
-		score = score + money_i * coin_mul;
+		score = score + money_i * coin_mul * lives;
 			
-		HighScoreController.highscorecontroller.addScore(score, name);
+		HighScoreControllerWasteland.highscorecontrollerWasteland.addScore(score, name);
 
 	}
 }

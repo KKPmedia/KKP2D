@@ -12,24 +12,23 @@ public class HishScoreTest : MonoBehaviour {
 
    	void OnGUI() {
 
-
-
+	
 		if (GUI.Button (new Rect (10, 80, 100, 30), "Add score: ")){
 
-			HighScoreController.highscorecontroller.addScore(i, name);
+			HighScoreControllerMountain.highscorecontrollerMountain.addScore(i, name);
 			i++;
 
 		}
 
 		if (GUI.Button (new Rect (10, 160, 100, 30), "Save: " )) {
 
-			HighScoreController.highscorecontroller.Save();
+			HighScoreControllerMountain.highscorecontrollerMountain.Save();
 			
 		}
 
 		if (GUI.Button (new Rect (10, 200, 100, 30), "Load: " )) {
 			
-			HighScoreController.highscorecontroller.Load();
+			HighScoreControllerMountain.highscorecontrollerMountain.Load();
 			
 		}
 
