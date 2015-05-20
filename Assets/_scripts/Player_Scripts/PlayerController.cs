@@ -77,6 +77,10 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
+		if (HP < 1) {
+			dead();
+		}
+
 		if (Input.GetButtonDown ("Pause") && alive) {
 			if (pause) {
 				Time.timeScale = 1;
@@ -132,10 +136,6 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetButtonDown("Hit") && Time.time > nextSlash) {
 				slash ();
 			}
-		}
-		
-		if (HP < 1) {
-			dead();
 		}
 	}
 	
