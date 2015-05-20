@@ -560,6 +560,7 @@ MonoBehaviour:
   hp_bar: {fileID: 194878}
   money_text: {fileID: 126328}
   playerName: {fileID: 106968}
+  earned_Money: 
   lp_3: {fileID: 127606}
   lp_2: {fileID: 130176}
   lp_1: {fileID: 148622}
@@ -1555,7 +1556,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 97.5, y: -6.80000019}
+  m_AnchoredPosition: {x: 91.6999969, y: -6.80000019}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22496902
