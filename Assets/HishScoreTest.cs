@@ -5,47 +5,33 @@ using UnityEngine.UI;
 
 public class HishScoreTest : MonoBehaviour {
 
-	public Text name_disp;
-	public Text scores_disp;
-	public bool update;
-	string nametable;
-	string scorestable;
-	List<Scores> highscore;
-	int x = 0;
+	public int score;
+	public string name = "kamu";
+	int i = 0;
 
-	// Use this for initialization
-	void Start() {
-		//EventManager._instance._buttonClick += ButtonClicked;
 
-	}
+   	void OnGUI() {
 
-	void Update() {
-		//EventManager._instance._buttonClick += ButtonClicked;
-		if (update) {
-			drawNew();
+
+
+		if (GUI.Button (new Rect (10, 80, 100, 30), "Add score: ")){
+
+			HighScoreController.highscorecontroller.addScore(i, name);
+			i++;
+
 		}
-	}
 
-	public void setUpdate(bool x) {
-		update = x;
-	}
+		if (GUI.Button (new Rect (10, 160, 100, 30), "Save: " )) {
 
-	private void drawNew() {
+			HighScoreController.highscorecontroller.Save();
 			
-		update = false;
-			highscore = new List<Scores> ();
-			int i = highscore.Count;
-			highscore = HighScoreController._instance.GetHighScore (); 
+		}
+
+		if (GUI.Button (new Rect (10, 200, 100, 30), "Load: " )) {
 			
-			foreach (Scores _score in highscore) {
-				//if (en == true && x < i) {
-				nametable += _score.name + "\n";
-				scorestable += _score.score + "\n";
-				x ++;
-				//}
-			}
-		name_disp.text = nametable;
-		scores_disp.text = scorestable;
+			HighScoreController.highscorecontroller.Load();
+			
+		}
+
 	}
 }
-

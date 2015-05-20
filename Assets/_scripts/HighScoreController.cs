@@ -1,115 +1,114 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 
 public class HighScoreController: MonoBehaviour {
 	
-		private static HighScoreController m_instance;
-		private const int LeaderboardLength = 10;
-		
-		public static HighScoreController _instance {
+	public static HighScoreController highscorecontroller;
 
-			get {
-				if (m_instance == null) {
-					m_instance = new GameObject ("HighScoreManager").AddComponent<HighScoreController> ();                
-				}
-				return m_instance;
-			}
-		}
-		
-		void Awake ()
-		{
-			if (m_instance == null) {
-				m_instance = this;            
-			} else if (m_instance != this)        
-				Destroy (gameObject);    
-			
-			DontDestroyOnLoad (gameObject);
-		}
-		
-		public void SaveHighScore (string name, int score)
-		{
-			List<Scores> HighScores = new List<Scores> ();
-			
-			int i = 1;
-			while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
-				Scores temp = new Scores ();
-				temp.score = PlayerPrefs.GetInt ("HighScore" + i + "score");
-				temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
-				HighScores.Add (temp);
-				i++;
-			}
-			if (HighScores.Count == 0) {            
-				Scores _temp = new Scores ();
-				_temp.name = name;
-				_temp.score = score;
-				HighScores.Add (_temp);
-			} else {
-				for (i=1; i<=HighScores.Count && i<=LeaderboardLength; i++) {
-					if (score > HighScores [i - 1].score) {
-						Scores _temp = new Scores ();
-						_temp.name = name;
-						_temp.score = score;
-						HighScores.Insert (i - 1, _temp);
-						break;
-					}            
-					if (i == HighScores.Count && i < LeaderboardLength) {
-						Scores _temp = new Scores ();
-						_temp.name = name;
-						_temp.score = score;
-						HighScores.Add (_temp);
-						break;
-					}
-				}
-			}
-			
-			i = 1;
-			while (i<=LeaderboardLength && i<=HighScores.Count) {
-				PlayerPrefs.SetString ("HighScore" + i + "name", HighScores [i - 1].name);
-				PlayerPrefs.SetInt ("HighScore" + i + "score", HighScores [i - 1].score);
-				i++;
-			}
-			
-		}
-		
-		public List<Scores>  GetHighScore ()
-		{
-			List<Scores> HighScores = new List<Scores> ();
-			
-			int i = 1;
-			while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
-				Scores temp = new Scores ();
-				temp.score = PlayerPrefs.GetInt ("HighScore" + i + "score");
-				temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
-				HighScores.Add (temp);
-				i++;
-			}
-			
-			return HighScores;
-		}
-		
-		public void ClearLeaderBoard ()
-		{
-			//for(int i=0;i<HighScores.
-			List<Scores> HighScores = GetHighScore();
-			
-			for(int i=1;i<=HighScores.Count;i++)
-			{
-				PlayerPrefs.DeleteKey("HighScore" + i + "name");
-				PlayerPrefs.DeleteKey("HighScore" + i + "score");
-			}
-		}
-		
-		void OnApplicationQuit()
-		{
-			PlayerPrefs.Save();
+	public int leaderboardLength = 10;
+	public int score;
+	public string name;
+	public List<Scores> highscores = new List<Scores> ();
+
+	void Awake() {
+		if (highscorecontroller == null) {
+			DontDestroyOnLoad(gameObject);
+			highscorecontroller = this;
+		} else if (highscorecontroller != this) {
+			Destroy(this.gameObject);
 		}
 	}
-	
+
+	public void addScore(int newPoint, string newName) {
+
+		Scores newScore = new Scores (newPoint, newName);
+
+		if (highscores.Count > 0) {
+
+			//for (int i = 0; i < highscores.Count; i++) {
+			foreach (Scores oldScores in highscores) {
+
+				if (newScore.score > oldScores.score) {
+					highscores.Insert(highscores.IndexOf(oldScores), newScore);
+					break;
+						//i++;
+						//highscores.Add(newScore);
+				}
+
+				if (highscores.IndexOf(oldScores) == highscores.Count - 1) 
+					highscores.Add (newScore);
+			}
+		} else {
+			highscores.Add (newScore);
+		}
+
+
+	}
+
+	public Scores getScoreatIndex(int i) {
+		return (Scores)highscores[i];
+	}
+
+	public void Save() {
+
+		BinaryFormatter bf = new BinaryFormatter ();
+		FileStream file = File.Create (Application.persistentDataPath + "highScores.dat");
+
+		//Scores scores = new Scores (score, name);
+		//score.score = this.score;
+		//score.name = this.name;
+		//byte[] temp;
+		//temp = new byte[highscores.Count];
+
+
+		//for (int i = 0; i <; i++) {
+		//	highscores.Add (Load ()[i]);
+		//}
+		//highscores.Add (scores);
+
+		//for (int i = 1; i < highscores.Count; i++) {
+
+		bf.Serialize (file, highscores);
+		//}
+		file.Close();
+	}
+
+	public void Load() {
+		if (File.Exists (Application.persistentDataPath + "highScores.dat")) {
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Open (Application.persistentDataPath + "highScores.dat", FileMode.Open);
+				
+			//for (int i = 0; i < file.Length; i++)
+			//while (file.Position != file.Length) {
+			//	highscores.Add ((Scores)bf.Deserialize (file));
+			//}
+			this.highscores = (List<Scores>)bf.Deserialize (file); 
+			//foreach (Scores score in highscores) {
+			//	Debug.Log (score.name + "  " + score.score);
+			//}
+			//this.score = score.score;
+			//this.name = score.name;
+
+			file.Close ();
+		}
+	}
+}
+
+	[Serializable]
 	public class Scores
 	{
 		public int score;
 		public string name;
-		
+
+	public Scores (int score, string name) {
+		this.score = score;
+		this.name = name;
 	}
+	}
+
 

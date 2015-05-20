@@ -259,7 +259,7 @@ RectTransform:
   m_LocalScale: {x: 1.82204473, y: 1.82204425, z: 1.82204425}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 179.743118, y: 94.1250458}
@@ -484,7 +484,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &343163149
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467686, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: m_IsActive
@@ -1394,7 +1394,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424150, guid: 12ff64efacb42864883e90424be85698, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11413062, guid: 12ff64efacb42864883e90424be85698, type: 2}
       propertyPath: turnToRight
@@ -1584,6 +1584,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 114988937}
   m_RootOrder: 3
+--- !u!1 &952697684
+GameObject:
+  m_PrefabParentObject: {fileID: 138290, guid: e030de7040f51124b9a34a928f984c0d, type: 2}
+  m_PrefabInternal: {fileID: 575653641}
+--- !u!114 &952697691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952697684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54115be58d9528d4b997aaa9951c0dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 0
+  r: 
 --- !u!1001 &1023630300
 Prefab:
   m_ObjectHideFlags: 0
@@ -2920,7 +2937,7 @@ Transform:
   - {fileID: 1876471168}
   - {fileID: 1164176688}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1712123824
 GameObject:
   m_PrefabParentObject: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
@@ -2940,6 +2957,8 @@ MonoBehaviour:
   player: {fileID: 1475531431}
   hp_bar: {fileID: 280199716}
   money_text: {fileID: 0}
+  playerName: {fileID: 0}
+  earned_Money: 
   lp_3: {fileID: 559326025}
   lp_2: {fileID: 253941508}
   lp_1: {fileID: 1984343612}
@@ -3537,3 +3556,46 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 496912, guid: c22c20eb860b82c4a95cc1840a6dd4f0, type: 2}
   m_PrefabInternal: {fileID: 616332092}
+--- !u!1 &2120791282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2120791283}
+  - 114: {fileID: 2120791284}
+  m_Layer: 0
+  m_Name: HighScoreController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2120791283
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120791282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!114 &2120791284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120791282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd36af1a391b1674db09a338d6a65c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardLength: 10
+  score: 7767
+  name: Kamu
+  highscores: []
