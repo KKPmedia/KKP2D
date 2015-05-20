@@ -24,6 +24,12 @@ TagManager:
   - fulture
   - platform
   - checkpoint
+  - name_disp
+  - score_disp
+  - highscorecontrolerWasteland
+  - highscorecontrolerMountain
+  - highscorecontrolerJungle
+  - highscorecontrolerDesert
   layers:
   - Default
   - TransparentFX

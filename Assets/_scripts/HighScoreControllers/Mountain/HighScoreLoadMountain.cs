@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class HighScoreLoadMountain : MonoBehaviour {
 	
-	public Text name;
-	public Text scoretext;
-	
-	private string namestring;
-	private string scorestring;
-	
+	private Text name;
+	private Text scoretext;
+
 	void OnEnable() {
 		
+		name = GameObject.FindGameObjectWithTag ("name_disp").GetComponent<Text>();
+		scoretext = GameObject.FindGameObjectWithTag ("score_disp").GetComponent<Text> ();
+
 		HighScoreControllerMountain.highscorecontrollerMountain.Load ();
-		
+
 		name.text = "";
 		scoretext.text = "";
 		

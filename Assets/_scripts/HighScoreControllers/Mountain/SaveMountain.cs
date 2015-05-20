@@ -33,7 +33,7 @@ public class SaveMountain : MonoBehaviour {
 	void save() {
 		i = 0;
 		name = PlayerPrefs.GetString ("Name");
-		lives = int.Parse (player.getLives ().ToString());
+		//lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
 		
 		if (time < 2) 
@@ -51,9 +51,9 @@ public class SaveMountain : MonoBehaviour {
 		
 		money_s = money.ToString();
 		money_i = int.Parse(money_s);
-		score = score + money_i * coin_mul * lives;
-		
-		HighScoreControllerWasteland.highscorecontrollerWasteland.addScore(score, name);
-		
+		score = score + money_i * coin_mul;
+		HighScoreControllerMountain.highscorecontrollerMountain.Load ();		
+		HighScoreControllerMountain.highscorecontrollerMountain.addScore(score, name);
+		HighScoreControllerMountain.highscorecontrollerMountain.Save ();
 	}
 }

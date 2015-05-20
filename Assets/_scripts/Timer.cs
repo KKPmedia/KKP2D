@@ -43,4 +43,11 @@ public class Timer : MonoBehaviour {
 	public static int getMin() {
 		return System.Int32.Parse(a.ToString());
 	}
+
+	public void resetTimer () {
+		a = 0;
+		c = 0;
+		x = 0;
+		y = 0;
+	}
 }

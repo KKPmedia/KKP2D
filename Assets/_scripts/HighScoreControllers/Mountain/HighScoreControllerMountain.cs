@@ -68,7 +68,13 @@ public class HighScoreControllerMountain: MonoBehaviour {
 			file.Close ();
 		}
 	}
+
+	public void Clear() {
+		highscores.Clear ();
+		Save ();
+	}
 }
+
 	[Serializable]
 	public class Scores
 	{

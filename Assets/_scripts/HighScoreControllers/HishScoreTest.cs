@@ -15,20 +15,20 @@ public class HishScoreTest : MonoBehaviour {
 	
 		if (GUI.Button (new Rect (10, 80, 100, 30), "Add score: ")){
 
-			HighScoreControllerMountain.highscorecontrollerMountain.addScore(i, name);
+			HighScoreControllerJungle.highscorecontrollerJungle.addScore(i, name);
 			i++;
 
 		}
 
 		if (GUI.Button (new Rect (10, 160, 100, 30), "Save: " )) {
 
-			HighScoreControllerMountain.highscorecontrollerMountain.Save();
+			HighScoreControllerJungle.highscorecontrollerJungle.Save();
 			
 		}
 
 		if (GUI.Button (new Rect (10, 200, 100, 30), "Load: " )) {
 			
-			HighScoreControllerMountain.highscorecontrollerMountain.Load();
+			HighScoreControllerJungle.highscorecontrollerJungle.Load();
 			
 		}
 

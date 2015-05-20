@@ -68,6 +68,10 @@ public class HighScoreControllerWasteland: MonoBehaviour {
 			file.Close ();
 		}
 	}
+	public void Clear() {
+		highscores.Clear ();
+		Save ();
+	}
 }
 	//[Serializable]
 	//public class Scores
