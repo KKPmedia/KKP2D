@@ -36181,6 +36181,10 @@ Prefab:
       propertyPath: m_Name
       value: Meat 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11468652, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1827001300}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
   m_IsPrefabParent: 0

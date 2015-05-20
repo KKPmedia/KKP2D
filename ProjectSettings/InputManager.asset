@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: Shoot
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: mouse 0
@@ -55,7 +55,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Hit
-    descriptiveName: 
+    descriptiveName: PC/Xbox/Ps3
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -71,12 +71,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Run
-    descriptiveName: 
+    descriptiveName: PC/Ps3
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
     altNegativeButton: 
-    altPositiveButton: joystick button 3
+    altPositiveButton: joystick button 0
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
