@@ -9787,7 +9787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
       propertyPath: m_FixedAngle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
       propertyPath: m_IsKinematic
@@ -14695,6 +14695,14 @@ Prefab:
     - target: {fileID: 11457092, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
       propertyPath: distance_x
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
+      propertyPath: m_FixedAngle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
@@ -21381,7 +21389,7 @@ GameObject:
   - 61: {fileID: 1039763477}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23000,8 +23008,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1105492686}
-  - 114: {fileID: 1105492688}
   - 61: {fileID: 1105492687}
+  - 114: {fileID: 1105492688}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -28619,6 +28627,14 @@ Prefab:
     - target: {fileID: 11457092, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
       propertyPath: distance_x
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044182, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
+      propertyPath: m_FixedAngle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de103b54de7f5274bb3a233cf37c4606, type: 2}
@@ -39346,6 +39362,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1006387381}
+    - target: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
   m_IsPrefabParent: 0
