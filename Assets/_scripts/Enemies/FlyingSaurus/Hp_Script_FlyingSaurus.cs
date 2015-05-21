@@ -55,7 +55,8 @@ public class Hp_Script_FlyingSaurus : MonoBehaviour {
 	
 	void holdOn () {
 		this.GetComponent<Walk> ().enabled = false;
-		this.GetComponent<Rigidbody2D> ().gravityScale = 5;
+		this.GetComponent<Rigidbody2D> ().isKinematic = false;
+		this.GetComponent<Rigidbody2D> ().gravityScale = 15;
 	}
 	
 	void destroy() {

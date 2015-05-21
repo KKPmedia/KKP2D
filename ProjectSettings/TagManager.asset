@@ -30,6 +30,7 @@ TagManager:
   - highscorecontrolerMountain
   - highscorecontrolerJungle
   - highscorecontrolerDesert
+  - spikes
   layers:
   - Default
   - TransparentFX

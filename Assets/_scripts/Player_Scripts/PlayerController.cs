@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour {
 	public GameObject pauseMenu;
 	public GameObject gameOver;
 
+	public AudioClip jumpsound;
+	public AudioClip slashsound;
+	public AudioClip shootsound;
+
+	private AudioSource source;
+
 	Animator anim;
 	Rigidbody2D rb;
 	bool grounded = false;
@@ -30,7 +36,12 @@ public class PlayerController : MonoBehaviour {
 	private int i = 0;
 	private float startSpeed;
 	private bool pause = false;
-	
+
+
+	void Awake() {
+		source = GetComponent<AudioSource> ();
+	}
+
 	// Use this for initialization
 	void Start () {
 		if (transform.localScale.x < 0)
@@ -46,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 
 		pauseMenu.SetActive (false);
 		gameOver.SetActive (false);
+
 	}
 	
 	void FixedUpdate () {
@@ -55,6 +67,7 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat ("vSpeed", GetComponent<Rigidbody2D> ().velocity.y);
 		
 		float move = Input.GetAxis ("Horizontal");
+
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 	
 		if (climb) 
@@ -95,10 +108,16 @@ public class PlayerController : MonoBehaviour {
 
 		if (alive && !pause) {
 			if ((grounded) && Input.GetButtonDown ("Jump") && !crouch) {
+				source.PlayOneShot (jumpsound);
 				jump ();
 			}
 
 			if (inRun) {
+				if (!grounded || anim.GetFloat ("Speed") == 0)
+					source.mute = true;
+				else
+					source.mute = false;
+
 				run_timer -= Time.deltaTime;
 				if (run_timer < 0) {
 					run_timer = 0;
@@ -166,7 +185,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (col.CompareTag ("checkpoint")) {
 			resetPos = col.transform.position;
-			Destroy(col);
+			Destroy(col.gameObject);
 		}
 	}
 
@@ -204,10 +223,15 @@ public class PlayerController : MonoBehaviour {
 		GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, jumpForce));
 	}
 	void run() {
+		source.loop = true;
+		source.Play();
 		MaxSpeed = MaxSpeed * run_multiplikator;
 		anim.SetBool ("run", true);
 	}
 	void notRun() {
+		source.loop = false;
+		source.mute = false;
+		source.Pause ();
 		MaxSpeed = MaxSpeed / run_multiplikator;
 		anim.SetBool ("run", false);
 	}
@@ -224,9 +248,12 @@ public class PlayerController : MonoBehaviour {
 		if (move == 0 || !grounded) {
 			nextFire = Time.time + fireRate;
 			anim.SetBool ("shoot", true);
-			if (!crouch)
+			if (!crouch) {
+				source.PlayOneShot (shootsound);
 				Instantiate (shot, ShotSpawn.position, ShotSpawn.rotation);
+			}
 			else if (crouch) {
+				source.PlayOneShot (shootsound);
 				Transform crouchShootSpawn = Instantiate (ShotSpawn, ShotSpawn.position, ShotSpawn.rotation) as Transform;
 				crouchShootSpawn.position = new Vector3 (ShotSpawn.position.x, ShotSpawn.position.y - 0.4f, ShotSpawn.position.z);
 				Instantiate (shot, crouchShootSpawn.position, ShotSpawn.rotation);
@@ -243,6 +270,9 @@ public class PlayerController : MonoBehaviour {
 	}
 	void slash() {
 		nextSlash = Time.time + slashRate;
+
+		source.PlayOneShot (slashsound);
+
 		anim.SetBool ("slash", true);
 		if(crouch)
 			Invoke ("setSlashFalse", 0.3f);

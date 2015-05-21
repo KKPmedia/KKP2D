@@ -11,7 +11,6 @@ public class Spikes : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pc = player.GetComponent<PlayerController> ();	
-		alive = true;
 	}
 	
 	// Update is called once per frame

@@ -585,7 +585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 196020, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11410760, guid: e25bc4c611569434c98d40e019e6146e, type: 2}
       propertyPath: m_Enabled
@@ -1599,8 +1599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54115be58d9528d4b997aaa9951c0dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 0
-  r: 
+  score: 0
+  name: kamu
 --- !u!1001 &1023630300
 Prefab:
   m_ObjectHideFlags: 0
@@ -2127,6 +2127,22 @@ Prefab:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1881530596}
+    - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+      propertyPath: jumpsound
+      value: 
+      objectReference: {fileID: 8300000, guid: e33e7b0a8d7ae8b44b9dc9e635724677, type: 3}
+    - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+      propertyPath: shootsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 90950d52f04a7d94a8484cf4c20bc3a2, type: 3}
+    - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+      propertyPath: slashsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 96bc406c30d96e74c8e9fadac91cd336, type: 3}
+    - target: {fileID: 11429634, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+      propertyPath: runsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4967f094ad3f5164c94e0934ac335482, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
   m_IsPrefabParent: 0
@@ -2638,6 +2654,75 @@ Animator:
   m_PrefabParentObject: {fileID: 9505042, guid: 075a07d5ecba24846b5f55f7dbe6be1f,
     type: 2}
   m_PrefabInternal: {fileID: 1324697152}
+--- !u!82 &1475531440
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475531431}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d28a41554751cf14e94a37ce8a630580, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .609000027
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &1481781930
 Transform:
   m_PrefabParentObject: {fileID: 481134, guid: 347bcd52071178540bf41a1ca26b3cea, type: 2}

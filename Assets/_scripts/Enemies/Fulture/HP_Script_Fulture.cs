@@ -27,7 +27,7 @@ public class HP_Script_Fulture : MonoBehaviour {
 		if (hp < 1) {
 			enemy_anim.SetBool ("dead", true);
 			//this.GetComponent<AttackScript>().enabled = false;
-			//holdOn();
+			holdOn();
 			Invoke ("giveMeat", 0.6f);
 			destroy();
 		}
@@ -53,8 +53,8 @@ public class HP_Script_Fulture : MonoBehaviour {
 	}
 	
 	void holdOn () {
-		direction = this.GetComponent<Follow> ().getDirection();
-		this.GetComponent<Follow> ().setDirection(0);
+		this.GetComponent<Walk> ().enabled = false;
+		this.GetComponent<Rigidbody2D> ().gravityScale = 5;
 	}
 	
 	void destroy() {
