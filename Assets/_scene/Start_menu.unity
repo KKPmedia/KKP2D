@@ -1105,7 +1105,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11439400, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 11469446, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 5868462, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 8250256, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &606662998
@@ -2423,7 +2427,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11439400, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 11469446, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 5868462, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 8250256, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1044555903
@@ -2903,7 +2911,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11439400, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 11469446, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 5868462, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 8250256, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1287736482
@@ -3310,7 +3322,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11439400, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 11469446, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 5868462, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
+    - {fileID: 8250256, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 50e2473fe3f748d408d358ffbf983d48, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1468287638
