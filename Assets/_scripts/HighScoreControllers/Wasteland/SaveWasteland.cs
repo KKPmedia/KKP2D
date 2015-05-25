@@ -13,11 +13,18 @@ public class SaveWasteland : MonoBehaviour {
 	private int money_i;
 	private int time;
 	private int score;
-	private int i, lives;
+	private int i = 0, lives;
 
+
+	void Start() {
+		name = PlayerPrefs.GetString ("Name");
+		PlayerPrefs.DeleteAll ();
+	}
 
 	void Update() {
+
 		if (i > 0) {
+
 			save ();
 		}
 	}
@@ -31,10 +38,10 @@ public class SaveWasteland : MonoBehaviour {
 
 	void save() {
 		i = 0;
-		name = PlayerPrefs.GetString ("Name");
+
 		//lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
-			
+
 		if (time < 2) 
 			score = 4500;
 		else if (time > 2 && time < 3)
@@ -52,10 +59,17 @@ public class SaveWasteland : MonoBehaviour {
 		money_i = int.Parse(money_s);
 		score = score + money_i * coin_mul;
 
+
 		HighScoreControllerWasteland.highscorecontrollerWasteland.Load ();
-
 		HighScoreControllerWasteland.highscorecontrollerWasteland.addScore(score, name);
-
 		HighScoreControllerWasteland.highscorecontrollerWasteland.Save ();
+
+		PlayerPrefs.SetString ("Time", Timer.getNeededTime());
+		PlayerPrefs.SetString ("Money", (money_i / 15).ToString());
+		PlayerPrefs.SetInt ("Score", score);
+	}
+
+	public string getScore() {
+		return score.ToString ();
 	}
 }

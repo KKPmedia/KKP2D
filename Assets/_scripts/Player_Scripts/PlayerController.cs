@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-
+		
 		if (HP < 1) {
 			dead();
 		}
@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (alive && !pause) {
+
 			if ((grounded) && Input.GetButtonDown ("Jump") && !crouch) {
 				source.PlayOneShot (jumpsound);
 				jump ();
@@ -186,6 +187,12 @@ public class PlayerController : MonoBehaviour {
 		if (col.CompareTag ("checkpoint")) {
 			resetPos = col.transform.position;
 			Destroy(col.gameObject);
+		}
+
+		if (col.CompareTag ("spikes")) {
+			if (alive) {
+				dead ();
+			}
 		}
 	}
 
@@ -330,6 +337,10 @@ public class PlayerController : MonoBehaviour {
 	}
 	public float getHP() {
 		return HP;
+	}
+
+	public void setDead() {
+		this.HP = 0;
 	}
 
 	public float getNrg () {

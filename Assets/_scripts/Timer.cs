@@ -8,8 +8,8 @@ public class Timer : MonoBehaviour {
 	public bool timerStarted = false;
 	static Text instruction;
 
-	float x = 0, y = 0, c = 0;
-	static float a = 0;
+	public static float x = 0, y = 0, c = 0;
+	public static float a = 0;
 	// Use this for initialization
 	    	
 	void Start() {
@@ -38,6 +38,10 @@ public class Timer : MonoBehaviour {
 
 	public static string getTime() {
 		return instruction.ToString();
+	}
+
+	public static string getNeededTime() {
+		return a.ToString () + ":" + c.ToString () + ":" + x.ToString () + y.ToString ();
 	}
 
 	public static int getMin() {
