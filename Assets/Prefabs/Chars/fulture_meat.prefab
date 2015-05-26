@@ -15,6 +15,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &168766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 413330}
+  - 58: {fileID: 5815356}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &179786
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,14 +61,14 @@ GameObject:
   - 212: {fileID: 21273948}
   - 50: {fileID: 5085822}
   - 61: {fileID: 6172470}
-  - 58: {fileID: 5831968}
   - 114: {fileID: 11498994}
   - 114: {fileID: 11486548}
   - 114: {fileID: 11452142}
   - 114: {fileID: 11472968}
+  - 61: {fileID: 6142462}
   m_Layer: 0
   m_Name: fulture_meat
-  m_TagString: enemy
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,13 +80,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 557.51001, y: -62.7799988, z: 0}
+  m_LocalPosition: {x: 657.506348, y: 674.58197, z: 0}
   m_LocalScale: {x: -1.21536601, y: 1.21536648, z: 1.21536648}
   m_Children:
   - {fileID: 476756}
   - {fileID: 427366}
+  - {fileID: 413330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &413330
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400882}
+  m_RootOrder: 2
 --- !u!4 &427366
 Transform:
   m_ObjectHideFlags: 1
@@ -106,23 +135,23 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5831968
+--- !u!58 &5815356
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194880}
+  m_GameObject: {fileID: 168766}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: .889999986, y: -.109999999}
+  m_Offset: {x: .850000024, y: -.0700000003}
   serializedVersion: 2
-  m_Radius: .319999993
+  m_Radius: .200000003
 --- !u!58 &5887080
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -136,7 +165,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .0494999997
---- !u!61 &6172470
+--- !u!61 &6142462
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -146,9 +175,22 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0750280172, y: -.132648662}
+  m_Offset: {x: .0399999991, y: -.0900000036}
   serializedVersion: 2
-  m_Size: {x: 1.09531021, y: .307021648}
+  m_Size: {x: 1.30999994, y: .25}
+--- !u!61 &6172470
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194880}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .123289041, y: -.122987673}
+  serializedVersion: 2
+  m_Size: {x: 1.5775975, y: .422748148}
 --- !u!95 &9526654
 Animator:
   serializedVersion: 3
@@ -213,11 +255,10 @@ MonoBehaviour:
   hp: 5
   main_bullett_damage: 2
   slash_damage: 5
+  main_bullett: {fileID: 0}
+  meat: {fileID: 137912, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
   player: {fileID: 0}
   slash_delay: 1.5
-  meatSpawn: {fileID: 476756}
-  meat: {fileID: 137912, guid: 6f8afdb7a1a659f46a381fe8a125bc0c, type: 2}
-  player_anim: {fileID: 0}
 --- !u!114 &11498994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e438cd3b684e1cf46a2a21a84208c063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 5, y: 0}
+  speed: {x: 0, y: 0}
   direction: {x: -1, y: 0}
 --- !u!212 &21269910
 SpriteRenderer:

@@ -27,9 +27,10 @@ public class HPScript : MonoBehaviour {
 		if (hp < 1) {
 			enemy_anim.SetBool ("dead", true);
 			//this.tag = null;
-			this.GetComponent<PolygonCollider2D>().enabled = false;
-			this.GetComponent<CircleCollider2D>().enabled = false;
-			this.GetComponent<BoxCollider2D>().enabled = false;
+
+			//this.GetComponent<PolygonCollider2D>().enabled = false;
+			//this.GetComponent<CircleCollider2D>().enabled = false;
+			//this.GetComponent<BoxCollider2D>().enabled = false;
 			holdOn();
 			//Invoke ("giveMeat", 0.6f);
 			destroy();

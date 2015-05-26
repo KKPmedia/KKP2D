@@ -28,14 +28,13 @@ public class HP_Script_Fulture : MonoBehaviour {
 			enemy_anim.SetBool ("dead", true);
 			//this.GetComponent<AttackScript>().enabled = false;
 			holdOn();
-			Invoke ("giveMeat", 0.6f);
 			destroy();
 		}
 	}
 	
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag ("main_bullett")) {
-			if (i == 0) {
+			if (i < 1) {
 				//holdOn();
 				enemy_anim.SetBool("hurt", true);
 				hp -= main_bullett_damage;
@@ -53,11 +52,12 @@ public class HP_Script_Fulture : MonoBehaviour {
 	}
 	
 	void holdOn () {
-		this.GetComponent<Walk> ().enabled = false;
+		this.GetComponent<MoveScript> ().enabled = false;
 		this.GetComponent<Rigidbody2D> ().gravityScale = 5;
 	}
 	
 	void destroy() {
+		Invoke ("giveMeat", 2f);
 		Destroy (this.gameObject, 2f);
 	}
 	
