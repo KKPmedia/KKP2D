@@ -48,7 +48,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 456954}
   - 61: {fileID: 6141924}
-  - 114: {fileID: 11458050}
   m_Layer: 8
   m_Name: Hurt_area
   m_TagString: Untagged
@@ -170,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34, y: 123, z: 0}
+  m_LocalPosition: {x: -81.317482, y: 4.26542759, z: 0}
   m_LocalScale: {x: .800000012, y: .800000012, z: 5.8499999}
   m_Children:
   - {fileID: 416436}
@@ -383,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39fdee99a1b8a04c9a82b7144abeddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHP: 15
+  startHP: 10
   MaxSpeed: 6
   run_multiplikator: 1.79999995
   run_timer: 10
@@ -402,18 +401,6 @@ MonoBehaviour:
   jumpsound: {fileID: 8300000, guid: e33e7b0a8d7ae8b44b9dc9e635724677, type: 3}
   slashsound: {fileID: 8300000, guid: 96bc406c30d96e74c8e9fadac91cd336, type: 3}
   shootsound: {fileID: 8300000, guid: 90950d52f04a7d94a8484cf4c20bc3a2, type: 3}
---- !u!114 &11458050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c213ba6ead03b4d448f95f176cec85b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
 --- !u!212 &21252570
 SpriteRenderer:
   m_ObjectHideFlags: 1

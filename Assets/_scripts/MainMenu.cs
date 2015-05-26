@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
 	public GameObject nomuted;
 	public void ChangeToScene (int sceneToChangeTo){
-		if (sceneToChangeTo > 12) {
+		if (sceneToChangeTo == 13) {
 			Application.Quit ();
 		} else { 
 			if (Time.timeScale < 1)
