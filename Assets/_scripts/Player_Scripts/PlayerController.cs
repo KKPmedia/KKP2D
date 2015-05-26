@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	private float gravity, linearDrag, nextFire = 0.0f, nextSlash = 0.0f, HP, lives = 3;
 	private Vector3 resetPos;
 	private Vector2 plattformDirection, plattformSpeed;
-	private int i = 0;
+	private int i = 0, x = 0;
 	private float startSpeed;
 	private bool pause = false;
 
@@ -79,6 +79,8 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * MaxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 			}
+		//} else if (!alive) {
+		//	GetComponent<Rigidbody2D>().gravityScale = 50f;
 		}
 		
 		if (move > 0 && !FacingRight && alive)
@@ -89,7 +91,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		
+
 		if (HP < 1) {
 			dead();
 		}
@@ -182,6 +184,10 @@ public class PlayerController : MonoBehaviour {
 				climb = true;
 				anim.SetBool("climb", true);
 			}
+		}
+
+		if (col.CompareTag ("enemy") && alive) {
+			Invoke ("mainCharHurt", 0.2f);
 		}
 
 		if (col.CompareTag ("checkpoint")) {
@@ -288,6 +294,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void dead() {
+
 		alive = false;
 		lives--;
 		anim.SetBool ("dead", true);
@@ -303,13 +310,33 @@ public class PlayerController : MonoBehaviour {
 			Time.timeScale = 0;
 		} else {
 			i = 0;
+			x = 0;
 			run_timer = 10f;
 			HP = startHP;
 			MaxSpeed = startSpeed;
 			this.GetComponent<Transform> ().position = resetPos;
+			//GetComponent<Rigidbody2D>().gravityScale = gravity;
 			anim.SetBool ("dead", false);
 			alive = true;
 		}
+	}
+
+	void mainCharHurt() {
+		if (x == 0) {
+			HP = HP - 2f;
+			if (HP < 1)
+				dead();
+			else {
+				anim.SetBool ("hurt", true);
+				Invoke ("setHurtFalse", 1f);
+			}
+			x++;
+		}
+	}
+
+	void setHurtFalse() {
+		anim.SetBool ("hurt", false);
+		x = 0;
 	}
 
 	void setPauseTrue () {

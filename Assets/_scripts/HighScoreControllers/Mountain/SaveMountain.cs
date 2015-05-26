@@ -15,7 +15,12 @@ public class SaveMountain : MonoBehaviour {
 	private int time;
 	private int score;
 	private int i, lives;
-	
+
+
+	void Start() {
+		name = PlayerPrefs.GetString ("Name");
+		PlayerPrefs.DeleteAll ();
+	}
 	
 	void Update() {
 		if (i > 0) {
@@ -32,7 +37,6 @@ public class SaveMountain : MonoBehaviour {
 	
 	void save() {
 		i = 0;
-		name = PlayerPrefs.GetString ("Name");
 		//lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
 		
@@ -55,5 +59,13 @@ public class SaveMountain : MonoBehaviour {
 		HighScoreControllerMountain.highscorecontrollerMountain.Load ();		
 		HighScoreControllerMountain.highscorecontrollerMountain.addScore(score, name);
 		HighScoreControllerMountain.highscorecontrollerMountain.Save ();
+
+		PlayerPrefs.SetString ("Time", Timer.getNeededTime());
+		PlayerPrefs.SetString ("Money", (money_i / 15).ToString());
+		PlayerPrefs.SetInt ("Score", score);
+	}
+
+	public string getScore() {
+		return score.ToString ();
 	}
 }
