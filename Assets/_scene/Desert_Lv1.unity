@@ -9681,7 +9681,7 @@ GameObject:
   - 114: {fileID: 442592398}
   m_Layer: 0
   m_Name: Spikes2
-  m_TagString: Untagged
+  m_TagString: spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11531,7 +11531,7 @@ Prefab:
     - target: {fileID: 11496406, guid: 5b1e17372fa376a4ca88b14efcf3c9e5, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 44990352}
     - target: {fileID: 9560286, guid: 5b1e17372fa376a4ca88b14efcf3c9e5, type: 2}
       propertyPath: m_Enabled
       value: 0
@@ -15531,7 +15531,7 @@ GameObject:
   - 114: {fileID: 771549513}
   m_Layer: 0
   m_Name: topdownspikes
-  m_TagString: Untagged
+  m_TagString: spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21486,7 +21486,7 @@ GameObject:
   - 114: {fileID: 1038865545}
   m_Layer: 0
   m_Name: Spikes3
-  m_TagString: Untagged
+  m_TagString: spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24323,7 +24323,7 @@ GameObject:
   - 114: {fileID: 1178890768}
   m_Layer: 0
   m_Name: Spikes1
-  m_TagString: Untagged
+  m_TagString: spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25157,7 +25157,7 @@ Prefab:
     - target: {fileID: 11496406, guid: 5b1e17372fa376a4ca88b14efcf3c9e5, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 44990352}
     - target: {fileID: 177312, guid: 5b1e17372fa376a4ca88b14efcf3c9e5, type: 2}
       propertyPath: m_Name
       value: Cherry 1
