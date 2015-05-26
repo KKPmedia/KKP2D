@@ -18,11 +18,39 @@ GameObject:
   - 114: {fileID: 11475380}
   m_Layer: 0
   m_Name: bee_rotate
+  m_TagString: ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &161624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 436020}
+  - 58: {fileID: 5854118}
+  m_Layer: 0
+  m_Name: GameObject
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &436020
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 475626}
+  m_RootOrder: 0
 --- !u!4 &475626
 Transform:
   m_ObjectHideFlags: 1
@@ -30,9 +58,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.8199997, y: -2.41000009, z: 0}
+  m_LocalPosition: {x: 83.1900024, y: 6.67000008, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 436020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5029618
@@ -63,6 +92,19 @@ CircleCollider2D:
   m_Offset: {x: .189999998, y: -.159999996}
   serializedVersion: 2
   m_Radius: .319999993
+--- !u!58 &5854118
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161624}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .140000001, y: -.100000001}
+  serializedVersion: 2
+  m_Radius: .419999987
 --- !u!60 &6097096
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -140,7 +182,7 @@ MonoBehaviour:
   hp: 2
   main_bullett_damage: 2
   slash_damage: 5
-  player_anim: {fileID: 9505042, guid: 075a07d5ecba24846b5f55f7dbe6be1f, type: 2}
+  player_anim: {fileID: 0}
   slash_delay: 1.5
 --- !u!114 &11451990
 MonoBehaviour:
@@ -153,9 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a82cb397cd354585c964bf29241aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  height: 3
-  width: 3
+  speed: 4
+  height: 2
+  width: 2
 --- !u!114 &11475380
 MonoBehaviour:
   m_ObjectHideFlags: 1

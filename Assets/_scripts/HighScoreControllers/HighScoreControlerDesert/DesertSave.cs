@@ -14,6 +14,10 @@ public class DesertSave : MonoBehaviour {
 	private int score;
 	private int i, lives;
 	
+	void Start() {
+		name = PlayerPrefs.GetString ("Name");
+		PlayerPrefs.DeleteAll ();
+	}
 	
 	void Update() {
 		if (i > 0) {
@@ -30,7 +34,6 @@ public class DesertSave : MonoBehaviour {
 	
 	void save() {
 		i = 0;
-		name = PlayerPrefs.GetString ("Name");
 		//lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
 		
@@ -50,8 +53,17 @@ public class DesertSave : MonoBehaviour {
 		money_s = money.ToString();
 		money_i = int.Parse(money_s);
 		score = score + money_i * coin_mul;
+
 		HighScoreControllerDesert.highscorecontrollerDesert.Load ();
 		HighScoreControllerDesert.highscorecontrollerDesert.addScore(score, name);
 		HighScoreControllerDesert.highscorecontrollerDesert.Save ();
+
+		PlayerPrefs.SetString ("Time", Timer.getNeededTime());
+		PlayerPrefs.SetString ("Money", (money_i / 15).ToString());
+		PlayerPrefs.SetInt ("Score", score);
+	}
+
+	public string getScore() {
+		return score.ToString ();
 	}
 }

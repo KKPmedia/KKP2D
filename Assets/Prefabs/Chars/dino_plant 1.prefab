@@ -11,12 +11,12 @@ GameObject:
   - 95: {fileID: 9531268}
   - 212: {fileID: 21240364}
   - 50: {fileID: 5089688}
-  - 61: {fileID: 6114142}
   - 114: {fileID: 11402290}
   - 114: {fileID: 11462552}
+  - 60: {fileID: 6022452}
   m_Layer: 0
   m_Name: dino_plant 1
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +44,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 535.940002, y: -63.6199989, z: 0}
-  m_LocalScale: {x: -2.79999995, y: 2.79999995, z: 2.81036305}
+  m_LocalPosition: {x: 2.80999994, y: 2.5999999, z: .370000005}
+  m_LocalScale: {x: -2.0186286, y: 2.0186286, z: 2.02609968}
   m_Children:
   - {fileID: 467174}
   m_Father: {fileID: 0}
@@ -77,19 +77,46 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6114142
-BoxCollider2D:
+--- !u!60 &6022452
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103526}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.011531285, y: -.119385041}
-  serializedVersion: 2
-  m_Size: {x: .775623322, y: .75123024}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .100000001, y: -.254999995}
+      - {x: .230000004, y: -.165000007}
+      - {x: .239999995, y: -.135000005}
+      - {x: .239999995, y: .0649999976}
+      - {x: .209999993, y: .125}
+      - {x: .0399999991, y: .264999986}
+      - {x: -.0500000007, y: .305000007}
+      - {x: -.25, y: .305000007}
+      - {x: -.400000006, y: .204999998}
+      - {x: -.589999974, y: .0949999988}
+      - {x: -.589999974, y: .0649999976}
+      - {x: -.610000014, y: -.0149999997}
+      - {x: -.610000014, y: -.115000002}
+      - {x: -.50999999, y: -.144999996}
+      - {x: -.600000024, y: -.254999995}
+      - {x: -.579999983, y: -.294999987}
+      - {x: -.550000012, y: -.294999987}
+      - {x: -.49000001, y: -.375}
+      - {x: -.330000013, y: -.465000004}
+      - {x: -.109999999, y: -.465000004}
+      - {x: .0199999996, y: -.344999999}
+      - {x: .109999999, y: -.314999998}
+      - {x: .129999995, y: -.284999996}
+    - - {x: -.150000006, y: -.245000005}
+      - {x: -.170000002, y: -.234999999}
+      - {x: -.180000007, y: -.254999995}
+      - {x: -.159999996, y: -.264999986}
 --- !u!61 &6144420
 BoxCollider2D:
   m_ObjectHideFlags: 1

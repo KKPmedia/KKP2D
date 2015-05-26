@@ -16,11 +16,39 @@ GameObject:
   - 114: {fileID: 11425968}
   m_Layer: 0
   m_Name: dino_fly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &148518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 426282}
+  - 58: {fileID: 5821796}
+  m_Layer: 0
+  m_Name: GameObject
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &426282
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445002}
+  m_RootOrder: 0
 --- !u!4 &445002
 Transform:
   m_ObjectHideFlags: 1
@@ -28,9 +56,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 530.630005, y: -57.0299988, z: 0}
-  m_LocalScale: {x: 2.58784199, y: 2.58784294, z: 2.58784294}
-  m_Children: []
+  m_LocalPosition: {x: 76.5400009, y: 9.35999966, z: 0}
+  m_LocalScale: {x: 1.82188213, y: 1.82188272, z: 1.82188272}
+  m_Children:
+  - {fileID: 426282}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5044182
@@ -48,6 +77,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5821796
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148518}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .219999999, y: -.119999997}
+  serializedVersion: 2
+  m_Radius: .184381917
 --- !u!61 &6188824
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -108,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 5, y: 10}
   direction: {x: 1, y: 0}
-  distance_x: 10
+  distance_x: 15
 --- !u!212 &21273178
 SpriteRenderer:
   m_ObjectHideFlags: 1

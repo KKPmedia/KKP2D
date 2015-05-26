@@ -39,18 +39,17 @@ public class SaveWasteland : MonoBehaviour {
 	void save() {
 		i = 0;
 
-		//lives = int.Parse (player.getLives ().ToString());
 		time = Timer.getMin();
 
 		if (time < 2) 
 			score = 4500;
-		else if (time > 2 && time < 3)
+		if (time > 2 && time < 3)
 			score = 4000;
-		else if (time > 3 && time < 4)
+		if (time > 3 && time < 4)
 			score = 3500;
-		else if (time > 4 && time < 5)
+		if (time > 4 && time < 5)
 			score = 3000;
-		else if (time > 5)
+		if (time > 5)
 			score = 2000;
 
 		money = HUD_UI.money;
